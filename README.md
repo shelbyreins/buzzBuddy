@@ -17,19 +17,19 @@ password: `asd`
 1. Clone GitHub Repository
 2. Install node packages
 
-        cd project2
+        cd buzzBuddy
         npm install
         
 3. Update `password` in config.json file
 4. Create database in MySQL
 
-        cd project2/db
+        cd buzzBuddy/db
         mysql -u root -p
         source schema.sql
 
 5. Populate table in MySQL
 
-        cd project2/db
+        cd buzzBuddy/db
         mysql -u root -p
         source seeds.sql
 
