@@ -3,7 +3,7 @@
 
 
 
-https://polar-eyrie-33440.herokuapp.com/
+https://buzzbuddy.herokuapp.com/
 
 **Default login**
 
