@@ -1,8 +1,6 @@
 # <img src="app/public/assets/images/logo1.png" width="50px"> Buzz Buddy 
 
 
-
-
 https://buzzbuddy.herokuapp.com/
 
 **Default login**
