@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 app.use(express.static("./app/public"));
 
 
+
 var htmlRoutes = require("./app/routes/html-routes");
 app.use(htmlRoutes);
 
