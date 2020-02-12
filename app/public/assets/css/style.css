@@ -1,0 +1,116 @@
+body{
+    background:url(/assets/images/alcohol-background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+} 
+
+ #login-btn, #signUp-btn-nav, #signIn-btn{
+    background: rgba(255, 0, 0);
+    border:rgba(255, 0, 0);
+    font-weight: bold;
+    border-radius: 0px;
+    padding-left: 20px;
+    padding-right:20px;
+    padding-top:5px;
+    padding-bottom:5px;
+ }
+
+ #signIn-btn{
+     margin-right:10px;
+ }
+
+ #login-btn:hover, #signUp-btn-nav:hover, #signIn-btn:hover{
+    background: rgba(255, 0, 0, 0.454);
+}
+#login-btn:focus, #signUp-btn-nav:focus, #signIn-btn:focus{
+    outline:none !important;
+    box-shadow: none !important;
+    border:rgba(255, 0, 0);
+}
+
+#login-email, #login-password{
+    background: transparent;
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 0px !important;
+}
+
+
+#login-email:focus, #login-password:focus, #login-email:active, #login-password:active{
+    outline:none !important;
+    box-shadow:5px 2px red;
+    background: transparent;  
+    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 0px;
+}
+ #card-title{
+     font-size: 3em;
+ }
+
+#wrapper {
+    background-color:rgba(10, 9, 9, 0.8);
+    text-align: center;
+    color:white;
+    /* border-radius: 10px; */
+    margin-top: 70px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+
+#home-content{
+    margin: auto, 
+
+}
+
+.images{
+    background: rgb(246, 244, 244);
+    height: auto;
+    width: 50%;
+    margin-right: 20px;
+}
+
+.caption{
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#wrapperTwo{
+background-color:rgba(10, 9, 9, 0.9);
+text-align: center;
+color:white;
+margin-top: 40px;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+
+.modal {
+    text-align: center;
+    padding: 0!important;
+    width:100%;
+}
+
+  .modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+}
+
+  .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* @media only screen 
+  and (min-width: 480px) 
+  and (max-width: 576px){
+
+  } */

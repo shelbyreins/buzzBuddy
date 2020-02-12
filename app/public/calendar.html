@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/assets/css/calendar.css">
+
+
+    <title>Buzz Buddy</title>
+    <link rel="shortcut icon" href="/assets/images/logo1.png" />
+
+    <style>
+        html {
+            font: 500 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #333;
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul,
+        ol,
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #demo {
+            width: 400px;
+            margin: 30px auto;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        input {
+            margin: 10px 0;
+            height: 28px;
+            width: 200px;
+            padding: 0 6px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light" style="background-color: #ffffff;">
+        <img src="/assets/images/logo1.png" alt="logo" id="logoImg" class="ml-3">
+        <div id="userName"></div>
+        <button type="button" class="btn btn-primary ml-auto" id="logoutBtn">Logout</button>
+    </nav>
+
+    <div class="mt-3 mb-2 mx-auto" id="one">
+    </div>
+
+    <br>
+
+    <div class="card mt-1 mx-auto" id="addBtn" style="width: 500px; display: none;">
+        <div id="alcoholAdded"></div>
+        <div class="card-header" style="background-color:white">
+            <button type="button" id="add-btn" class="btn btn-primary mx-auto" data-toggle="modal"
+                data-target="#exampleModal">
+                Add
+            </button>
+        </div>
+        <div class="card-body">
+
+            <p>Drink: <span id="drink"></span></p>
+            <p>Quantity: <span id="drink_quantity"></span></p>
+            <p>Price: <span id="drink_price"></span></p>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Your Drink(s)</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container-fluid">
+
+                        <div class="row justify-content-center">
+
+                            <div class="col-sm-3 p-0  box">
+                                <button name="subject" type="submit" value="beer" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/beer.png" alt=""></button>
+
+                                <div class="alcohol-type mb-3">Beer</div>
+                            </div>
+                            <div class="col-sm-3 p-0 box">
+                                <button name="subject" type="submit" value="Bloody Mary" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/bloodyMary.png"
+                                        alt=""></button>
+                                <div class="alcohol-type mb-3">Bloody Mary</div>
+                            </div>
+                            <div class="col-sm-3 p-0 box">
+                                <button name="subject" type="submit" value="bourbon" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/bourbon.png" alt=""></button>
+                                <div class="alcohol-type mb-3">Bourbon</div>
+                            </div>
+                            <div class="col-sm-3 p-0 box">
+                                <button name="subject" type="submit" value="champagne" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/champagne.png"
+                                        alt=""></button>
+                                <div class="alcohol-type mb-3">Champagne</div>
+                            </div>
+
+                        </div>
+
+                        <div class="row  justify-content-center">
+
+                            <div class="col-sm-3 p-0 box">
+                                <button name="subject" type="submit" value="cider" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/cider.png" alt=""></button>
+                                <div class="alcohol-type mb-3">Cider</div>
+                            </div>
+                            <div class="col-sm-3 p-0  box">
+                                <button name="subject" type="submit" value="cocktail" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/cocktail.png" alt=""></button>
+                                <div class="alcohol-type mb-3">Cocktail</div>
+                            </div>
+                            <div class="col-sm-3 p-0 box">
+                                <button name="subject" type="submit" value="Gin Tonic" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/ginTonic.png" alt=""></button>
+                                <div class="alcohol-type mb-3">Gin Tonic</div>
+
+                            </div>
+                            <div class="col-sm-3 p-0 box">
+                                <button name="subject" type="submit" value="margarita" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/margarita.png"
+                                        alt=""></button>
+                                <div class="alcohol-type mb-3">Margarita</div>
+                            </div>
+
+                        </div>
+
+                        <div class="row  justify-content-center">
+                            <div class="col-sm-3 p-0 box">
+                                <button name="subject" type="submit" value="martini" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/martini.png" alt=""></button>
+                                <div class="alcohol-type mb-3">Martini</div>
+                            </div>
+                            <div class="col-sm-3 p-0 box">
+                                <button name="subject" type="submit" value="mojito" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/mojito.png" alt=""></button>
+                                <div class="alcohol-type mb-3">Mojito</div>
+                            </div>
+                            <div class="col-sm-3 p-0  box">
+                                <button name="subject" type="submit" value="Moscow Mule" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/moscowMule.png"
+                                        alt=""></button>
+                                <div class="alcohol-type mb-3">Moscow Mule</div>
+                            </div>
+                            <div class="col-sm-3 p-0 box">
+                                <button name="subject" type="submit" value="pilsner" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/pilsner.png" alt=""></button>
+                                <div class="alcohol-type mb-3">Pilsner</div>
+                            </div>
+
+                        </div>
+
+                        <div class="row  justify-content-center">
+
+                            <div class="col-sm-3 p-0 box">
+                                <button name="subject" type="submit" value="rum" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/rum.png" alt=""></button>
+                                <div class="alcohol-type mb-3">Rum</div>
+                            </div>
+                            <div class="col-sm-3 p-0 box">
+                                <button name="subject" type="submit" value="sake" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/sake.png" alt=""></button>
+                                <div class="alcohol-type mb-3">Sake</div>
+                            </div>
+                            <div class="col-sm-3 p-0 box">
+                                <button name="subject" type="submit" value="sangria" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/sangria.png" alt=""></button>
+                                <div class="alcohol-type mb-3">Sangria</div>
+                            </div>
+                            <div class="col-sm-3 p-0  box">
+                                <button name="subject" type="submit" value="shot" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/shot.png" alt=""></button>
+                                <div class="alcohol-type mb-3">Shot</div>
+                            </div>
+
+                        </div>
+
+                        <div class="row  justify-content-center">
+
+                            <div class="col-sm-3 p-0 box">
+                                <button name="subject" type="submit" value="tequila" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/tequila.png" alt=""></button>
+                                <div class="alcohol-type mb-3">Tequila</div>
+
+                            </div>
+                            <div class="col-sm-3 p-0 box">
+                                <button name="subject" type="submit" value="vodka" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/vodka.png" alt=""></button>
+                                <div class="alcohol-type mb-3">Vodka</div>
+
+                            </div>
+                            <div class="col-sm-3 p-0 box">
+                                <button name="subject" type="submit" value="whiskey" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/whiskey.png" alt=""></button>
+                                <div class="alcohol-type mb-3">Whiskey</div>
+
+                            </div>
+                            <div class="col-sm-3 p-0 box">
+                                <button name="subject" type="submit" value="wine" class="alcoholBtn"><img
+                                        class="alcohol-img mt-3 mb-2" src="/assets/images/wine.png" alt=""></button>
+                                <div class="alcohol-type mb-3">Wine</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="mt-4">
+                        <div for="input" class="label-form title">Quantity</div>
+                        <input type="integer" class="form-control inputs" id="quantity">
+
+                    </div>
+                    <div class="mt-4">
+                        <div for="input" class="label-form title">Price (USD)</div>
+                        <input type="integer" class="form-control inputs" id="price">
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" id="save-data" class="btn btn-primary" data-dismiss="modal">
+                        Save changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <script src="/assets/js/calendar.js"></script>
+    <script src="/assets/js/addAlcohol.js"> </script>
+    <script src="/assets/js/cardData.js"> </script>
+
+    <script>
+        var userId = JSON.parse(localStorage.getItem("currentUser")).id;
+
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth();
+        var date = now.getDate();
+
+        var data = [];
+
+        // inline
+        var datePicked;
+        var monthArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+        function loadCalendar() {
+
+            var $ca = $('#one').calendar({
+                width: 500,
+                height: 450,
+                data: data,
+                monthArray: monthArray,
+                date: new Date(year, month, date),
+                onSelected: function (view, date, data) {
+                    datePicked = date;
+                    localStorage.setItem("datePicked", datePicked);
+                    $("#addBtn").show();
+                    $("#drink").empty();
+                    $("#drink_quantity").empty();
+                    $("#drink_price").empty();
+                    fillCard();
+                },
+                viewChange: function (view, y, m) {
+                }
+            });
+        }
+
+        // picker
+        $('#two').calendar({
+            trigger: '#dt',
+            zIndex: 999,
+            data: data,
+            onSelected: function (view, date, data) {
+            },
+            onClose: function (view, date, data) {
+ 
+            }
+        });
+
+        var alcohol;
+
+        var i = 0;
+
+        $("#save-data").on("click", function (event) {
+            event.preventDefault();
+
+            loadCalendar();
+
+            var dateFormatted = datePicked.toLocaleDateString("en-US");
+            //Creating a dot
+            var dot = document.createElement("i");
+            dot.setAttribute("class", "dot");
+            var day = document.querySelector("[data-calendar-day='" + dateFormatted + "']");
+            day.append(dot);
+
+            var text = $("<div>");
+            text.attr("class", "calendar-label");
+            text.attr("id", String(i));
+            text.attr("style", "left: 834.125px; top: 552.8px; z-index: 2; display: none;");
+
+            var innerText = $("<p>");
+            innerText.append(dateFormatted + "<br>" + alcohol);
+
+            text.append(innerText);
+            text.append("<i>");
+
+            var textBody = $("body").append(text);
+
+            i++;
+        });
+
+        $(".alcoholBtn").on("click", function (event) {
+            event.preventDefault();
+
+            alcohol = $(this).val();
+        });
+
+        $(document).ready(function () {
+            loadCalendar();
+        });
+
+    </script>
+
+
+</body>
+
+</html>
