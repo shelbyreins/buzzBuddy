@@ -9,6 +9,5 @@ class CalendarPage extends Component {
     }
 }    
 
-ex
-        );port default CalendarPage;
+export default CalendarPage;
 
