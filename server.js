@@ -1,27 +1,26 @@
 var express = require("express");
-
-var bodyParser = require("body-parser");
+const routes = require("./routes");
 
 var app = express();
 
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3001;
 
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
-
-app.use(express.static("./app/public"));
-
+// Define middleware here
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 
-var htmlRoutes = require("./app/routes/html-routes");
-app.use(htmlRoutes);
+// if (process.env.NODE_ENV === "production") {
+//     app.use(express.static("client/build"));
+//   }
 
-var apiRoutes = require("./app/routes/api-routes");
-app.use(apiRoutes);
+// var htmlRoutes = require("./app/routes/html-routes");
+// app.use(htmlRoutes);
 
 
-app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-    
+app.use(routes);
 
+
+app.listen(PORT, () => {
+  console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
