@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Calendar from "../components/Calendar";
+import Calendar from "./../components/Calendar";
 
 class CalendarPage extends Component {
     render() {
@@ -12,4 +12,3 @@ class CalendarPage extends Component {
 }
 
 export default CalendarPage;
-
