@@ -4,11 +4,15 @@ import BarChart from "./../components/BarChart";
 
 class CalendarPage extends Component {
     render() {
+        let now = new Date();
         return (
             <div>
-                <div>
-                    <Calendar />
-                </div>
+                {/* <div> */}
+                    <main id="app">
+
+                        <Calendar year={now.getFullYear()} month={now.getMonth() + 1} day={now.getDate()}/>
+                    </main>
+
                 <div>
                     <BarChart />
                 </div>
