@@ -22,8 +22,8 @@ class AddEvent extends Component {
 
         this.state = {
             modalIsOpen: false,
-            start: moment(),
-            end: moment().startOf('hour').add(1, 'hour').add(10, 'minute'),
+            start: moment().format('MMMM Do YYYY'),
+            end: moment().startOf('hour').add(1, 'hour').add(10, 'minute').format('MMMM Do YYYY'),
             allDay: false,
             event: '',
         };
@@ -99,10 +99,10 @@ class AddEvent extends Component {
                                                 maxDate={this.state.end}
                                                 onChange={(startDate) => this.handleTimeChange(startDate, 'start')}
                                                 showTimeSelect
-                                                dateFormat="YYYY-MM-DD HH:mm"
-                                                timeFormat="HH:mm"
+                                                dateFormat="MMMM Do YYYY"
+                                                // timeFormat="h:mm:ss a"
                                                 className="form-control"
-                                                timeIntervals={15}
+                                                // timeIntervals={15}
                                             />
                                         </div>
                                     </div>
@@ -115,10 +115,10 @@ class AddEvent extends Component {
                                                 minDate={this.state.start}
                                                 onChange={(endDate) => this.handleTimeChange(endDate, 'end')}
                                                 showTimeSelect
-                                                dateFormat="YYYY-MM-DD HH:mm"
-                                                timeFormat="HH:mm"
+                                                dateFormat="MMMM Do YYYY"
+                                                // timeFormat="h:mm:ss a"
                                                 className="form-control"
-                                                timeIntervals={15}
+                                                // timeIntervals={15}
                                             />
                                         </div>
                                     </div>

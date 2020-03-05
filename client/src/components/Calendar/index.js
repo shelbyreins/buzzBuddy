@@ -37,7 +37,7 @@ class Calendar extends Component {
     };
 
     getCurrentDate = () => {
-        return this.state.currentMonth.format('MMMM YYYY');
+        return this.state.currentMonth.format('MMMM Do YYYY');
     };
 
     render() {
