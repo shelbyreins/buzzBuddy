@@ -1,4 +1,5 @@
 import React from "react";
+import { drinks } from "./../UserFunctions";
 import "./style.css";
 
 class Day extends React.Component {
@@ -115,14 +116,16 @@ class Calendar extends React.Component {
 
   saveEvents() {
     localStorage.setItem("events", JSON.stringify(this.state.events));
-    // $.ajax({
-    //   type: "POST",
-    //   url: "/addDrink",
-    //   data: this.state.events
-    // }).then(function() {
-    //   console.log("Events added to database");
-    // })
+    userData = {
+      email: localStorage.getItem("email"),
+      quantity: this.state.event
+    }
 
+    drinks(userData).then(res => {
+      if (res) {
+        this.props.history.push(`/profile`);
+      }
+    })
   }
   loadEvents() {
     let events = localStorage.getItem("events");
