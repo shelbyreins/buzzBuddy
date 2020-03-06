@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
+import "./style.css"
 
 class Landing extends Component {
   logOut(e) {
@@ -10,7 +11,7 @@ class Landing extends Component {
 
   render() {
     const loginRegLink = (
-      <ul className="navbar-nav">
+      <ul className="navbar-nav ">
         <li className="nav-item">
           <Link to="/login" className="nav-link">
             Login
@@ -40,7 +41,7 @@ class Landing extends Component {
     )
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+      <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
         <button
           className="navbar-toggler"
           type="button"
