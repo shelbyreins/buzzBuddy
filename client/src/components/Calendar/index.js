@@ -29,7 +29,7 @@ class Form extends React.Component {
         <div className="input-group">
           <input className="input-main"
             onChange={(e) => this.props.update(e.target.value)}
-            type="text" placeholder="Planned something?"
+            type="text" placeholder="Add a drink"
             value={this.props.value}>
           </input>
           <button type="submit" className="btn-main">+</button>
@@ -48,7 +48,7 @@ class Calendar extends React.Component {
       month: this.props.month - 1,
       year: this.props.year,
       cursor: "",
-      // search: "",
+      search: "",
       event: "",
       events: {}
     };
@@ -183,10 +183,10 @@ class Calendar extends React.Component {
       if (item) {
         let date = this.formatDate(item, this.state.month, this.state.year);
 
-        let thisMonth = (this.state.month === cursorDate[1] - 1)
-          && (this.state.year === cursorDate[2]);
+        let thisMonth = (this.state.month == cursorDate[1] - 1)
+          && (this.state.year == cursorDate[2]);
 
-        let selected = (item === cursorDate[0]) && thisMonth;
+        let selected = (item == cursorDate[0]) && thisMonth;
 
         let hasEvents = thisMonth &&
           (Array.isArray(this.state.events[date])) &&
@@ -251,7 +251,7 @@ class Calendar extends React.Component {
 
         {/* Event list */}
         <div className="events">
-          <h2 className="date-active">{this.state.cursor}</h2>
+          <h4 className="date-active">{this.state.cursor}</h4>
           {events.length > 0 && (<ul>{events}</ul>)}
         </div>
 
