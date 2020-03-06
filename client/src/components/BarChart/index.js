@@ -10,26 +10,31 @@ class BarChart extends Component {
             animationEnabled: true,
             theme: "light2",
             title: {
-                text: "Most Popular Social Networking Sites"
+                text: "Monthly Alcohol Intake"
             },
             axisX: {
-                title: "Social Network",
+                title: "Months",
                 reversed: true,
             },
             axisY: {
-                title: "Monthly Active Users",
+                title: "Quantity of Alcohol",
                 labelFormatter: this.addSymbols
             },
             data: [{
                 type: "bar",
                 dataPoints: [
-                    { y: 2200000000, label: "Facebook" },
-                    { y: 1800000000, label: "YouTube" },
-                    { y: 800000000, label: "Instagram" },
-                    { y: 563000000, label: "Qzone" },
-                    { y: 376000000, label: "Weibo" },
-                    { y: 336000000, label: "Twitter" },
-                    { y: 330000000, label: "Reddit" }
+                    { y: 2200000000, label: "January" },
+                    { y: 1800000000, label: "February" },
+                    { y: 800000000, label: "March" },
+                    { y: 563000000, label: "April" },
+                    { y: 376000000, label: "May" },
+                    { y: 336000000, label: "June" },
+                    { y: 330000000, label: "July" },
+                    { y: 330000000, label: "August" },
+                    { y: 330000000, label: "September" },
+                    { y: 330000000, label: "October" },
+                    { y: 330000000, label: "November" },
+                    { y: 330000000, label: "December" },
                 ]
             }]
         }
@@ -51,5 +56,5 @@ class BarChart extends Component {
         return CanvasJS.formatNumber(e.value / Math.pow(1000, order)) + suffix;
     }
 }
-// module.exports = BarChart;
+
 export default BarChart;
