@@ -48,7 +48,7 @@ class Calendar extends React.Component {
       month: this.props.month - 1,
       year: this.props.year,
       cursor: "",
-      search: "",
+      // search: "",
       event: "",
       events: {}
     };
@@ -221,16 +221,16 @@ class Calendar extends React.Component {
 
     return (
       <React.Fragment>
-        <h1>Calendar</h1>
+        {/* <h1>Calendar</h1> */}
 
         {/* Search */}
-        <div className="search">
+        {/* <div className="search">
           <input
             onChange={(e) => this.setState({ search: e.target.value })}
             type="text" placeholder="Search..."
             value={this.state.search}>
           </input>
-        </div>
+        </div> */}
 
         <div className="calendar">
           {/* Month selector */}
@@ -257,7 +257,7 @@ class Calendar extends React.Component {
 
         {/* New event */}
         <div className="event-add">
-          <h2>Add new event</h2>
+          {/* <h2>Add new event</h2> */}
           <Form value={this.state.event} submit={this.addEvent} update={this.updateEvent} />
         </div>
       </React.Fragment>
