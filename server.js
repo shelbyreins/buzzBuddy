@@ -3,11 +3,13 @@ var cors = require('cors')
 var bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
-const routes = require("./routes");
+const routes = require("./routes/Users");
+const apiRoutes = require("./routes/api-routes");
 
-var app = express();
+
 
 var PORT = process.env.PORT || 3001;
+var app = express();
 
 // Define middleware here
 app.use(bodyParser.json())
@@ -22,7 +24,12 @@ app.use(
 // if (process.env.NODE_ENV === "production") {
 //     app.use(express.static("client/build"));
 //   }
-const mongoURI = 'mongodb://localhost:27017/mernloginreg'
+
+console.log(routes)
+app.use(routes);
+app.use(apiRoutes);
+
+const mongoURI = 'mongodb://localhost:27017/buzzBuddy'
 
 mongoose
   .connect(
@@ -32,7 +39,7 @@ mongoose
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err))
 
-app.use(routes);
+
 
 
 app.listen(PORT, () => {
