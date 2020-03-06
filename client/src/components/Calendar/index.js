@@ -115,6 +115,14 @@ class Calendar extends React.Component {
 
   saveEvents() {
     localStorage.setItem("events", JSON.stringify(this.state.events));
+    // $.ajax({
+    //   type: "POST",
+    //   url: "/addDrink",
+    //   data: this.state.events
+    // }).then(function() {
+    //   console.log("Events added to database");
+    // })
+
   }
   loadEvents() {
     let events = localStorage.getItem("events");

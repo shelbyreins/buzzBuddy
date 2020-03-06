@@ -41,3 +41,20 @@ export const getProfile = user => {
       console.log(err)
     })
 }
+
+export const drinks = drink => {
+  return axios
+    .post("/addDrink", {
+      email: drink.email,
+      quantity: drink.quantity,
+      drink: drink.drink,
+      price: drink.price
+    })
+    .then(response => {
+      console.log(response)
+      return response.data
+    })
+    .catch(err => {
+      console.log(err)
+    });
+}
