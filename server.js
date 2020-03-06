@@ -33,6 +33,7 @@ const mongoURI = 'mongodb://localhost:27017/buzzBuddy'
 
 mongoose
   .connect(
+    process.env.MONGODB_URI||
     mongoURI,
     { useNewUrlParser: true }
   )
