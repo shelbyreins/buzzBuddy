@@ -7,11 +7,9 @@ class CalendarPage extends Component {
         let now = new Date();
         return (
             <div>
-                {/* <div> */}
-                    <main id="app">
-
-                        <Calendar year={now.getFullYear()} month={now.getMonth() + 1} day={now.getDate()}/>
-                    </main>
+                <main id="app">
+                    <Calendar year={now.getFullYear()} month={now.getMonth() + 1} day={now.getDate()} />
+                </main>
 
                 <div>
                     <BarChart />
