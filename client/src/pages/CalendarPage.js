@@ -6,13 +6,20 @@ class CalendarPage extends Component {
     render() {
         let now = new Date();
         return (
-            <div>
-                <main id="app">
-                    <Calendar year={now.getFullYear()} month={now.getMonth() + 1} day={now.getDate()} />
-                </main>
-
-                <div>
-                    <BarChart />
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6">
+                    <div className="mt-5">
+                        <BarChart />
+                        </div>
+                       
+                    </div>
+                    <div className="col-md-6">
+                    <main id="app" className="ml-5 mt-5">
+                            <Calendar year={now.getFullYear()} month={now.getMonth() + 1} day={now.getDate()} />
+                        </main>
+                        
+                    </div>
                 </div>
             </div>
         );
