@@ -183,10 +183,10 @@ class Calendar extends React.Component {
       if (item) {
         let date = this.formatDate(item, this.state.month, this.state.year);
 
-        let thisMonth = (this.state.month == cursorDate[1] - 1)
-          && (this.state.year == cursorDate[2]);
+        let thisMonth = (this.state.month === cursorDate[1] - 1)
+          && (this.state.year === cursorDate[2]);
 
-        let selected = (item == cursorDate[0]) && thisMonth;
+        let selected = (item === cursorDate[0]) && thisMonth;
 
         let hasEvents = thisMonth &&
           (Array.isArray(this.state.events[date])) &&
