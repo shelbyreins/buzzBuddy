@@ -116,16 +116,16 @@ class Calendar extends React.Component {
 
   saveEvents() {
     localStorage.setItem("events", JSON.stringify(this.state.events));
-    userData = {
-      email: localStorage.getItem("email"),
-      quantity: this.state.event
-    }
+    // userData = {
+    //   email: localStorage.getItem("email"),
+    //   quantity: this.state.event
+    // }
 
-    drinks(userData).then(res => {
-      if (res) {
-        this.props.history.push(`/profile`);
-      }
-    })
+    // drinks(userData).then(res => {
+    //   if (res) {
+    //     this.props.history.push(`/profile`);
+    //   }
+    // })
   }
   loadEvents() {
     let events = localStorage.getItem("events");
