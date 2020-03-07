@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Calendar from "./../components/Calendar";
 import BarChart from "./../components/BarChart";
+import YouTube from "./../components/YouTube";
 
 class CalendarPage extends Component {
     render() {
@@ -19,6 +20,9 @@ class CalendarPage extends Component {
                             <Calendar year={now.getFullYear()} month={now.getMonth() + 1} day={now.getDate()} />
                         </main>
                         
+                    </div>
+                    <div>
+                        <YouTube />
                     </div>
                 </div>
             </div>

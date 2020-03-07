@@ -11,7 +11,7 @@ class Landing extends Component {
 
   render() {
     const loginRegLink = (
-      <ul className="navbar-nav ">
+      <ul className="navbar-nav justify-content-md-right">
         <li className="nav-item">
           <Link to="/login" className="nav-link">
             Login
@@ -55,13 +55,13 @@ class Landing extends Component {
         </button>
 
         <div
-          className="collapse navbar-collapse justify-content-md-center"
+          className="collapse navbar-collapse "
           id="navbarsExample10"
         >
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link to="/" className="nav-link">
-                Home
+              <img src="../logo2.png" alt="logo" id="logo"/>
               </Link>
             </li>
           </ul>

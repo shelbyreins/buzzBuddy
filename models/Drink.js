@@ -3,16 +3,17 @@ const Schema = mongoose.Schema
 
 // Create Schema
 const DrinkSchema = new Schema({
+  _id: {
+    type: String,
+    required: true
+  },
   quantity: {
     type: Number,
     required: true
-  },
-  drink: {
-      type: String
   },
   price: {
       type: Number 
   }
 });
 
-module.exports = Drink = mongoose.model('drinks', UserSchema)
+module.exports = Drink = mongoose.model('drinks', DrinkSchema)

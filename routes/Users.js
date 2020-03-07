@@ -45,7 +45,8 @@ users.post('/register', (req, res) => {
 
 users.post('/login', (req, res) => {
   User.findOne({
-    email: req.body.email
+    email: req.body.email,
+    
   })
     .then(user => {
       if (user) {

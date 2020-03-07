@@ -7,9 +7,8 @@ drinks.use(cors());
 
 drinks.post("/addDrink", function(req, res) {
     const drinkData = {
-        email: req.body.email,
+        _id: req.body._id,
         quantity: req.body.quantity,
-        drink: req.body.drink,
         price: req.body.price,
     };
 
