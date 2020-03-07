@@ -5,6 +5,12 @@
 
 .nav-link{
     font-size: 1.2em;
+    padding: 0px;
+    padding-left:0px;
 }
 
-
+#logo{
+    width: 60%;
+    padding: 0px;
+    margin: 0px;
+}

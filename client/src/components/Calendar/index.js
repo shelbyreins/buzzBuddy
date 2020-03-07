@@ -1,5 +1,5 @@
 import React from "react";
-import { drinks } from "./../UserFunctions";
+import { drinks } from "../UserFunctions";
 import "./style.css";
 
 class Day extends React.Component {
@@ -33,6 +33,12 @@ class Form extends React.Component {
             type="text" placeholder="Add a drink"
             value={this.props.value}>
           </input>
+          <input className="input-main" 
+            onChange={(e) => this.props.updateQ(e.target.value)}
+            placeholder="quantity" 
+            type="text">
+          </input>
+          {/* <input id="drink" placeholder="quantity" type="text"></input> */}
           <button type="submit" className="btn-main">+</button>
         </div>
       </form>
@@ -51,7 +57,10 @@ class Calendar extends React.Component {
       cursor: "",
       search: "",
       event: "",
-      events: {}
+      events: {},
+      quantity: ""
+      // drink: "",
+      // price: ""
     };
     this.setDay = this.setDay.bind(this);
     this.setDate = this.setDate.bind(this);
@@ -61,6 +70,7 @@ class Calendar extends React.Component {
 
     this.addEvent = this.addEvent.bind(this);
     this.updateEvent = this.updateEvent.bind(this);
+    this.updateQuantity = this.updateQuantity.bind(this);
     this.saveEvents = this.saveEvents.bind(this);
     this.loadEvents = this.loadEvents.bind(this);
   }
@@ -116,16 +126,19 @@ class Calendar extends React.Component {
 
   saveEvents() {
     localStorage.setItem("events", JSON.stringify(this.state.events));
-    // userData = {
-    //   email: localStorage.getItem("email"),
-    //   quantity: this.state.event
-    // }
+    localStorage.setItem("quantity", this.state.quantity);
+    let userData = {
+      email: localStorage.getItem("email")
+      // quantity: $("#quantity").val(),
+      // drink: $("#drink").val()
+    }
 
-    // drinks(userData).then(res => {
-    //   if (res) {
-    //     this.props.history.push(`/profile`);
-    //   }
-    // })
+    console.log("userData: " + JSON.stringify(userData));
+    drinks(userData).then(res => {
+      // if (res) {
+      //   this.props.history.push(`/profile`);
+      // }
+    })
   }
   loadEvents() {
     let events = localStorage.getItem("events");
@@ -138,6 +151,7 @@ class Calendar extends React.Component {
     return [];
   }
   updateEvent(e) { this.setState({ event: e }); }
+  updateQuantity(e) { this.setState({ quantity: e }); }
   addEvent(e) {
     if (e) e.preventDefault();
     let event = this.state.event.trim();
@@ -269,7 +283,7 @@ class Calendar extends React.Component {
         {/* New event */}
         <div className="event-add">
           {/* <h2>Add new event</h2> */}
-          <Form value={this.state.event} submit={this.addEvent} update={this.updateEvent} />
+          <Form value={this.state.event} submit={this.addEvent} update={this.updateEvent} updateQ={this.updateQuantity} />
         </div>
       </React.Fragment>
     );
