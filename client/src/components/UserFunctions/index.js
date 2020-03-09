@@ -34,7 +34,7 @@ export const login = user => {
 export const getProfile = user => {
   return axios
     .get('profile', {
-      //headers: { Authorization: ` ${this.getToken()}` }
+      headers: { Authorization: ` ${this.getToken()}` }
     })
     .then(response => {
       console.log("********************" + response)
@@ -49,9 +49,9 @@ export const drinks = drink => {
   return axios
     .post("/addDrink", {
       email: drink.email,
-      quantity: drink.quantity,
-      drink: drink.drink,
-      price: drink.price
+      quantity: drink.quantity
+      // drink: drink.drink,
+      // price: drink.price
     })
     .then(response => {
       console.log(response)
