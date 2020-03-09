@@ -26,7 +26,20 @@ a {
   transition: all 0.3s ease;
   cursor: pointer; }
   a:hover {
-    color: #f04; }
+    color: rgb(62, 113, 145); }
+
+#day{
+  text-align: center
+}
+
+.date-active{
+  text-align: center 
+}
+
+#border{
+ border: .1px solid black;
+ width: 230px;
+}
 
 button {
   font: inherit;
@@ -38,7 +51,16 @@ button {
   cursor: pointer; }
   button.btn-main {
     color: #fff;
-    background: #f04; }
+    background: rgb(62, 113, 145); 
+   
+  }
+  #btn-calendar{
+    width: 80%;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center 
+  }
 
 input {
   font: inherit;
@@ -48,7 +70,11 @@ input {
   input::placeholder {
     color: rgba(0, 0, 0, 0.4); }
   input.input-main {
-    border: 0.1rem solid #f04; }
+    border: 0.1rem solid rgb(62, 113, 145);
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+   }
 
 input, button {
   height: 2.4rem;
@@ -107,11 +133,11 @@ input, button {
     cursor: pointer;
     transition: color, background 0.2s ease-in-out; }
     .days .day:not(.day-empty):not(.day-active):not(.has-matches):hover {
-      color: #f04;
+      color: rgb(62, 113, 145);
       background: rgba(0, 0, 0, 0.05); }
     .days .day.day-active {
       color: #fff;
-      background: #f04; }
+      background: rgb(62, 113, 145); }
       .days .day.day-active.has-events::before {
         background: #fff; }
     .days .day.day-empty {
@@ -125,10 +151,10 @@ input, button {
       width: 0.35rem;
       height: 0.35rem;
       border-radius: 50%;
-      background: #f04; }
+      background: rgb(62, 113, 145); }
     .days .day.has-matches:not(.day-active) {
       background: rgba(255, 0, 0, 0.1);
-      color: #f04; }
+      color: rgb(62, 113, 145); }
 
 .events {
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1); }

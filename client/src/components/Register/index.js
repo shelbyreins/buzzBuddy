@@ -38,7 +38,7 @@ class Register extends Component {
     }
 
     register(newUser).then(res => {
-      this.props.history.push(`/calendar`)
+      this.props.history.push(`/profile`)
     })
 
  
