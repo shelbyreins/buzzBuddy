@@ -7,12 +7,12 @@ drinks.use(cors());
 
 drinks.post("/addDrink", function(req, res) {
     const drinkData = {
-        _id: req.body._id,
-        quantity: req.body.quantity,
-        price: req.body.price,
+        // _id: req.body._id,
+        email: req.body.email,
+        quantity: req.body.quantity
     };
 
-    Drink.insert(drinkData);
+    Drink.create(drinkData);
 });
 
 module.exports = drinks;

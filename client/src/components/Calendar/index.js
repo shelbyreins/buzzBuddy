@@ -128,8 +128,8 @@ class Calendar extends React.Component {
     localStorage.setItem("events", JSON.stringify(this.state.events));
     localStorage.setItem("quantity", this.state.quantity);
     let userData = {
-      email: localStorage.getItem("email")
-      // quantity: $("#quantity").val(),
+      email: localStorage.getItem("email"),
+      quantity: localStorage.getItem("quantity")
       // drink: $("#drink").val()
     }
 
