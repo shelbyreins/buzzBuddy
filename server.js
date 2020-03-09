@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 
 const routes = require("./routes/Users");
 const apiRoutes = require("./routes/api-routes");
-
+const drinks = require("./routes/Drinks");
 
 
 var PORT = process.env.PORT || 3001;
@@ -28,6 +28,7 @@ app.use(
 console.log(routes)
 app.use(routes);
 app.use(apiRoutes);
+app.use(drinks);
 
 const mongoURI = 'mongodb://localhost:27017/buzzBuddy'
 
