@@ -12,7 +12,7 @@ drinks.post("/addDrink", function(req, res) {
         price: req.body.price,
     };
 
-    Drink.insert(drinkData);
+    Drink.create(drinkData);
 });
 
 module.exports = drinks;

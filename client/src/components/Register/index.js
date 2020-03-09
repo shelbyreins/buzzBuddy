@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "./style.css"
 import { register } from '../UserFunctions'
 
 class Register extends Component {
@@ -9,6 +10,10 @@ class Register extends Component {
       last_name: '',
       email: '',
       password: '',
+      gender: '',
+      age: '',
+      weight: '',
+
       errors: {}
     }
 
@@ -26,23 +31,28 @@ class Register extends Component {
       first_name: this.state.first_name,
       last_name: this.state.last_name,
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
+      age: this.state.age,
+      gender: this.state.gender,
+      weight: this.state.weight,
     }
-  
+
     register(newUser).then(res => {
-      this.props.history.push(`/login`)
+      this.props.history.push(`/calendar`)
     })
-  }
+
+ 
+}
 
   render() {
     return (
       <div className="container">
         <div className="row">
           <div className="col-md-6 mt-5 mx-auto">
-            <form noValidate onSubmit={this.onSubmit}>
+            <form noValidate onSubmit={this.onSubmit} >
               <h1 className="h3 mb-3 font-weight-normal">Register</h1>
               <div className="form-group">
-                <label htmlFor="name">First name</label>
+                <label htmlFor="name">First name<span className="required">*</span></label>
                 <input
                   type="text"
                   className="form-control"
@@ -53,7 +63,7 @@ class Register extends Component {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="name">Last name</label>
+                <label htmlFor="name">Last name <span className="required">*</span></label>
                 <input
                   type="text"
                   className="form-control"
@@ -64,7 +74,7 @@ class Register extends Component {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="email">Email address</label>
+                <label htmlFor="email">Email address<span className="required">*</span></label>
                 <input
                   type="email"
                   className="form-control"
@@ -75,13 +85,51 @@ class Register extends Component {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Password<span className="required">*</span> </label>
                 <input
                   type="password"
                   className="form-control"
                   name="password"
                   placeholder="Password"
                   value={this.state.password}
+                  onChange={this.onChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="gender">Gender<span className="required">*</span></label>
+                <select
+                  type="gender"
+                  className="form-control"
+                  name="gender"
+                  placeholder="Select gender"
+                  value={this.state.gender}
+                  onChange={this.onChange}
+                >
+                  <option className="inputs">Select gender</option>
+                  <option className="inputs">Female</option>
+                  <option className="inputs">Male</option>
+                  <option className="inputs">Other</option>
+                </select>
+              </div>
+              <div className="form-group">
+                <label htmlFor="Enter age">Age<span className="required">*</span></label>
+                <input
+                  type="age"
+                  className="form-control"
+                  name="age"
+                  placeholder="Enter age"
+                  value={this.state.age}
+                  onChange={this.onChange}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="weight">Weight<span className="required">*</span></label>
+                <input
+                  type="weight"
+                  className="form-control"
+                  name="weight"
+                  placeholder="Enter weight"
+                  value={this.state.weight}
                   onChange={this.onChange}
                 />
               </div>

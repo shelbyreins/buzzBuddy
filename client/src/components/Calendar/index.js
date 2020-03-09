@@ -135,9 +135,10 @@ class Calendar extends React.Component {
 
     console.log("userData: " + JSON.stringify(userData));
     drinks(userData).then(res => {
-      // if (res) {
-      //   this.props.history.push(`/profile`);
-      // }
+      if (res) {
+        // this.props.history.push(`/addDr`);
+        console.log(res);
+      }
     })
   }
   loadEvents() {

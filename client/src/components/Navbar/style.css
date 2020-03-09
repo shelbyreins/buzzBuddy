@@ -1,5 +1,7 @@
-.navbar{
-    padding: 20px;
+#navbar{
+    padding: 25px;
+    background-color: rgb(4, 4, 4) !important;
+   
     
 }
 

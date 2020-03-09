@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import "./style.css"
 
-class Landing extends Component {
+class Navbar extends Component {
   logOut(e) {
     e.preventDefault()
     localStorage.removeItem('usertoken')
@@ -11,37 +11,42 @@ class Landing extends Component {
 
   render() {
     const loginRegLink = (
-      <ul className="navbar-nav justify-content-md-right">
-        <li className="nav-item">
+      <div className="navbar-nav">
+        <div className="nav-item">
           <Link to="/login" className="nav-link">
             Login
           </Link>
-        </li>
-        <li className="nav-item">
+        </div>
+        <div className="nav-item">
           <Link to="/register" className="nav-link">
             Register
           </Link>
-        </li>
-      </ul>
+        </div>
+      </div>
     )
 
     const userLink = (
-      <ul className="navbar-nav">
-        <li className="nav-item">
+      <div className="navbar-nav">
+        {/* <div className="nav-item">
           <Link to="/profile" className="nav-link">
             User
           </Link>
-        </li>
-        <li className="nav-item">
+        </div> */}
+        <div className="nav-item">
           <a href="#" onClick={this.logOut.bind(this)} className="nav-link">
             Logout
           </a>
-        </li>
-      </ul>
+        </div>
+      </div>
     )
 
     return (
-      <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark" id="navbar">
+       
+              <Link to="/" className="navbar-brand">
+              <img src="../logo5.png" alt="logo" id="logo"/>
+              </Link>
+          
         <button
           className="navbar-toggler"
           type="button"
@@ -58,13 +63,7 @@ class Landing extends Component {
           className="collapse navbar-collapse "
           id="navbarsExample10"
         >
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link to="/" className="nav-link">
-              <img src="../logo2.png" alt="logo" id="logo"/>
-              </Link>
-            </li>
-          </ul>
+          
           {localStorage.usertoken ? userLink : loginRegLink}
         </div>
       </nav>
@@ -72,4 +71,4 @@ class Landing extends Component {
   }
 }
 
-export default withRouter(Landing)
+export default withRouter(Navbar)

@@ -5,36 +5,48 @@ class Landing extends Component {
   render() {
     return (
       <div>
-        <div className="hero mt-3">
-          <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-            <ol className="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div className="carousel-inner">
-              <div className="carousel-item active">
-                <img className="d-block w-100 slides" src="https://www.success.com/wp-content/uploads/legacy/sites/default/files/16_14.jpg" alt="First slide" />
-              </div>
-              <div className="carousel-item">
-                <img className="d-block w-100 slides" src="https://www.success.com/wp-content/uploads/legacy/sites/default/files/16_14.jpg" alt="Second slide" />
-              </div>
-              <div className="carousel-item">
-                <img className="d-block w-100 slides" src="https://www.success.com/wp-content/uploads/legacy/sites/default/files/16_14.jpg" alt="Third slide" />
+        {/* <div className="jumbotron mt-3"> */}
+        <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+          <ol className="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img className="d-block w-100 slides" src="../image1.jpg" alt="First slide" />
+              <div class="carousel-caption d-none d-md-block">
+                <h2>Hold yourself Accountable</h2>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
               </div>
             </div>
-            <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span className="sr-only">Previous</span>
-            </a>
-            <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span className="carousel-control-next-icon" aria-hidden="true"></span>
-              <span className="sr-only">Next</span>
-            </a>
+            <div className="carousel-item  align-items-center">
+              <img className="d-block w-100 slides" src="../image3.jpeg" alt="Second slide" />
+              <div class="carousel-caption d-none d-md-block">
+                <h2>Track your Journey</h2>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <img className="d-block w-100 slides" src="../image2.jpeg" alt="Third slide" />
+              <div class="carousel-caption d-none d-md-block">
+                <h2>Save Money</h2>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              </div>
+            </div>
           </div>
+          <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="sr-only">Previous</span>
+          </a>
+          <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="sr-only">Next</span>
+          </a>
         </div>
+        {/* </div> */}
 
-        <div className="hero mt-5">
+        <div className="jumbotron">
           <div className="container">
             <div className="row">
               <div className="col-md-6">

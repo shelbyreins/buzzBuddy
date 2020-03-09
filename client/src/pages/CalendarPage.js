@@ -2,11 +2,16 @@ import React, { Component } from "react";
 import Calendar from "./../components/Calendar";
 import BarChart from "./../components/BarChart";
 import YouTube from "./../components/YouTube";
+import Hero from "./../components/Hero"
 
 class CalendarPage extends Component {
     render() {
         let now = new Date();
         return (
+            <div>
+                <Hero backgroundImage>
+
+                </Hero>
             <div className="container">
                 <div className="row">
                     <div className="col-md-6">
@@ -25,6 +30,7 @@ class CalendarPage extends Component {
                         <YouTube />
                     </div>
                 </div>
+            </div>
             </div>
         );
     }

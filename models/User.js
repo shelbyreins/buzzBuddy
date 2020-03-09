@@ -18,6 +18,18 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
+  gender: {
+    type: String,
+    required: true
+  },
+  age: {
+    type: String,
+    required: true
+  },
+  weight: {
+    type: String,
+    required: true
+  },
   date: {
     type: Date,
     default: Date.now
