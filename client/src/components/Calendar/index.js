@@ -38,6 +38,11 @@ class Form extends React.Component {
             placeholder="quantity" 
             type="text">
           </input>
+          <input className="input-main" 
+            onChange={(e) => this.props.updateP(e.target.value)}
+            placeholder="price" 
+            type="text">
+          </input>
           {/* <input id="drink" placeholder="quantity" type="text"></input> */}
           <button type="submit" className="btn-main">+</button>
         </div>
@@ -71,6 +76,7 @@ class Calendar extends React.Component {
     this.addEvent = this.addEvent.bind(this);
     this.updateEvent = this.updateEvent.bind(this);
     this.updateQuantity = this.updateQuantity.bind(this);
+    this.updatePrice = this.updatePrice.bind(this);
     this.saveEvents = this.saveEvents.bind(this);
     this.loadEvents = this.loadEvents.bind(this);
   }
@@ -127,9 +133,11 @@ class Calendar extends React.Component {
   saveEvents() {
     localStorage.setItem("events", JSON.stringify(this.state.events));
     localStorage.setItem("quantity", this.state.quantity);
+    localStorage.setItem("price", this.state.price);
     let userData = {
-      email: localStorage.getItem("email"),
-      quantity: localStorage.getItem("quantity")
+      // email: localStorage.getItem("email"),
+      quantity: localStorage.getItem("quantity"),
+      price: localStorage.getItem("price")
       // drink: $("#drink").val()
     }
 
@@ -152,6 +160,7 @@ class Calendar extends React.Component {
   }
   updateEvent(e) { this.setState({ event: e }); }
   updateQuantity(e) { this.setState({ quantity: e }); }
+  updatePrice(e) { this.setState({ price: e }); }
   addEvent(e) {
     if (e) e.preventDefault();
     let event = this.state.event.trim();
@@ -283,7 +292,7 @@ class Calendar extends React.Component {
         {/* New event */}
         <div className="event-add">
           {/* <h2>Add new event</h2> */}
-          <Form value={this.state.event} submit={this.addEvent} update={this.updateEvent} updateQ={this.updateQuantity} />
+          <Form value={this.state.event} submit={this.addEvent} update={this.updateEvent} updateQ={this.updateQuantity} updateP={this.updatePrice}/>
         </div>
       </React.Fragment>
     );

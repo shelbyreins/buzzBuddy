@@ -44,9 +44,9 @@ export const getProfile = user => {
 
 export const drinks = drink => {
   return axios
-    .post("/addDrink", {
-      email: drink.email,
-      quantity: drink.quantity
+    .post("addDrink", {
+      quantity: drink.quantity,
+      price: drink.price
       // drink: drink.drink,
       // price: drink.price
     })

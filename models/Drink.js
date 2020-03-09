@@ -3,10 +3,6 @@ const Schema = mongoose.Schema
 
 // Create Schema
 const DrinkSchema = new Schema({
-  _id: {
-    type: String,
-    required: true
-  },
   quantity: {
     type: Number,
     required: true
