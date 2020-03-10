@@ -13,3 +13,14 @@
     text-decoration: none;
     border-radius: 0px;
 }
+
+#register-btn{
+    height: 40px;
+    border-radius: 0px;
+    background: rgb(62, 113, 145); 
+}
+
+#select-inputs{
+    height: 40px;
+    border-radius: 0px;
+}

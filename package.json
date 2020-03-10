@@ -31,6 +31,7 @@
   "dependencies": {
     "bcrypt": "^4.0.1",
     "body-parser": "^1.19.0",
+    "bootstrap": "^4.4.1",
     "cors": "^2.8.5",
     "crypto-js": "^3.1.9-1",
     "dotenv": "^8.2.0",
@@ -42,6 +43,7 @@
     "mysql2": "^2.1.0",
     "passport": "^0.4.1",
     "path": "^0.12.7",
+    "react-bootstrap": "^1.0.0-beta.17",
     "react-monthly-events": "0.0.7",
     "sequelize": "^5.21.4"
   }
