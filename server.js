@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 const routes = require("./routes/Users");
 const apiRoutes = require("./routes/api-routes");
 const drinks = require("./routes/Drinks");
+const passport = require('./passport');
 
 
 var PORT = process.env.PORT || 3001;
