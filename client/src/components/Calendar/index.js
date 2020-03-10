@@ -31,11 +31,24 @@ class Form extends React.Component {
     return (
       <form onSubmit={(e) => this.props.submit(e)} >
         <div className="input-group">
-          <input className="input-main mb-2 "
+          <select className="input-main mb-2"
             onChange={(e) => this.props.update(e.target.value)}
-            type="text" placeholder="Add a drink"
-            value={this.props.value}>
-          </input>
+            type="event" placeholder="Select Event"
+            value={this.props.value}
+          >
+            <option className="inputs">Select Event</option>
+            <option className="inputs">Watched Video</option>
+            <option className="inputs">AA Meeting</option>
+            <option className="inputs">Alcohol Drink</option>
+            <option className="inputs">No Alcohol</option>
+            <option className="inputs">Other</option>
+          </select>
+
+          {/* //<input className="input-main mb-2 " */}
+          {/* //   onChange={(e) => this.props.update(e.target.value)}
+          //   type="text" placeholder="Alcohol Type"
+          //   value={this.props.value}>
+          // </input> */}
           <input className="input-main mb-2 " 
             onChange={(e) => this.props.updateQ(e.target.value)}
             placeholder="quantity" 
@@ -48,7 +61,7 @@ class Form extends React.Component {
           </input>
       
           {/* <input id="drink" placeholder="quantity" type="text"></input> */}
-          <button type="submit" className="btn-main pb-3" id="btn-calendar">+</button>
+          <button type="submit" className="btn-main pb-3" id="btn-calendar">Add Event</button>
         </div>
       </form>
     );
@@ -136,15 +149,16 @@ class Calendar extends React.Component {
 
   saveEvents() {
     localStorage.setItem("events", JSON.stringify(this.state.events));
+    
+    localStorage.setItem("event", this.state.event);
     localStorage.setItem("quantity", this.state.quantity);
     localStorage.setItem("price", this.state.price);
     let userData = {
-      // email: localStorage.getItem("email"),
+      userId: localStorage.getItem("userId"),
+      event: localStorage.getItem("event"),
       quantity: localStorage.getItem("quantity"),
       price: localStorage.getItem("price")
-      // drink: $("#drink").val()
     }
-
     console.log("userData: " + JSON.stringify(userData));
     drinks(userData).then(res => {
       if (res) {

@@ -48,8 +48,7 @@ users.post('/register', (req, res) => {
 
 users.post('/login', (req, res) => {
   User.findOne({
-    email: req.body.email,
-    
+    email: req.body.email
   })
     .then(user => {
       if (user) {
@@ -67,7 +66,7 @@ users.post('/login', (req, res) => {
           let token = jwt.sign(payload, process.env.SECRET_KEY, {
             expiresIn: 1440
           })
-          res.send(token)
+          res.json({token : token, userId: user._id});
         } else {
           // Passwords don't match
           res.json({ error: 'User does not exist' })
