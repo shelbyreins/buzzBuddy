@@ -26,9 +26,14 @@ class Login extends Component {
     }
     localStorage.setItem("email", this.state.email);
     login(user).then(res => {
-      if (res) {
+      console.log("res from /login: " + JSON.stringify(res));
+      // if (res.email !== undefined) {
+      if (res.userId !== undefined) {
         
         this.props.history.push(`/profile`)
+      }
+      else {
+        alert(res.error);
       }
     })
   }
