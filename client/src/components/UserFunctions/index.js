@@ -23,7 +23,9 @@ export const login = user => {
       password: user.password
     })
     .then(response => {
-      localStorage.setItem('usertoken', response.data)
+      // console.log("response.data: " + response.data);
+      localStorage.setItem('usertoken', response.data.token);
+      localStorage.setItem("userId", response.data.userId);
       return response.data
     })
     .catch(err => {
@@ -48,6 +50,8 @@ export const getProfile = user => {
 export const drinks = drink => {
   return axios
     .post("addDrink", {
+      userId: drink.userId,
+      event: drink.event,
       quantity: drink.quantity,
       price: drink.price
       // drink: drink.drink,
