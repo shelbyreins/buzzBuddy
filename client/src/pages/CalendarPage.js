@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Calendar from "./../components/Calendar";
 import BarChart from "./../components/BarChart";
 // import YouTube from "./../components/YouTube";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class CalendarPage extends Component {
@@ -90,7 +90,7 @@ class CalendarPage extends Component {
                                 <h2>Find a local Meetup</h2>
                                 <p>Need to find a new hobby? Perfect, Meetup is a great way to people with the same interests as you!</p>
                                 <div className="event-btn-container">
-                                    <button className="btn btn-primary event-btn" >Click Me!</button>
+                                    <button className="btn btn-primary event-btn">Click Me!</button>
 
                                 </div>
                             </div>

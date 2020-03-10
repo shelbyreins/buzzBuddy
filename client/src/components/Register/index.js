@@ -36,9 +36,28 @@ class Register extends Component {
       weight: this.state.weight,
     }
 
-    register(newUser).then(res => {
-      this.props.history.push(`/login`)
-    })
+    let keyNum = 0;
+
+    for (let key in newUser) {
+      if (newUser[key] === "") {
+        alert("All fields must be filled");
+        break;
+      }
+      keyNum++;
+    }
+    
+    if (keyNum === 7) {
+      if (newUser.age >= 21) {
+
+        register(newUser).then(res => {
+          this.props.history.push(`/login`)
+        });
+      }
+      else {
+        alert("You must be 21 years or older");
+      }
+
+    }
 
  
 }
@@ -48,7 +67,7 @@ class Register extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-6 mt-5 mx-auto">
-            <form noValidate onSubmit={this.onSubmit} >
+            <form onSubmit={this.onSubmit} >
               <h1 className="h3 mb-3 font-weight-normal">Register</h1>
               <div className="form-group">
                 <label htmlFor="name">First name<span className="required">*</span></label>
