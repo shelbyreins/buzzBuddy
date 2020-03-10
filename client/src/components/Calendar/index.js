@@ -26,7 +26,7 @@ class Form extends React.Component {
   constructor(p) { super(p); }
   render() {
     return (
-      <form onSubmit={(e) => this.props.submit(e)}>
+      <form onSubmit={(e) => this.props.submit(e)} >
         <div className="input-group">
           <input className="input-main mb-2 "
             onChange={(e) => this.props.update(e.target.value)}
@@ -250,24 +250,14 @@ class Calendar extends React.Component {
     let events = this.getEvents(this.state.cursor).map((item, i) => {
       return (
         <li key={i}>{item}
-          <a href="#" onClick={() => this.removeEvent(this.state.cursor, i)}>–</a>
+          <a href="#"  onClick={() => this.removeEvent(this.state.cursor, i)}>–</a>
         </li>
       );
     });
 
     return (
       <React.Fragment>
-        {/* <h1>Calendar</h1> */}
-
-        {/* Search */}
-        {/* <div className="search">
-          <input
-            onChange={(e) => this.setState({ search: e.target.value })}
-            type="text" placeholder="Search..."
-            value={this.state.search}>
-          </input>
-        </div> */}
-  <div id="border">
+  <div id="border" className= "mb-5">
         <div className="calendar" > 
           {/* Month selector */}
           <div className="month">
@@ -288,7 +278,7 @@ class Calendar extends React.Component {
         {/* Event list */}
         <div className="events">
           <h4 className="date-active">{this.state.cursor}</h4>
-          {events.length > 0 && (<ul>{events}</ul>)}
+          {events.length > 0 && (<ul className="ml-5">{events}</ul>)}
         </div>
 
         {/* New event */}
@@ -301,11 +291,5 @@ class Calendar extends React.Component {
     );
   }
 }
-
-// let now = new Date();
-// ReactDOM.render(
-//   <Calendar year={now.getFullYear()} month={now.getMonth() + 1} day={now.getDate()} />,
-//   app
-// );
 
 export default Calendar;

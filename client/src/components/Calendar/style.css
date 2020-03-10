@@ -36,6 +36,26 @@ a {
   text-align: center 
 }
 
+.background-jumbotron{
+  background: linear-gradient(
+    to right, 
+    #f9f9f7 0%, 
+    #f9f9f7   50%, 
+    #e7e7ef 50%, 
+    #e7e7ef 100%
+  );  
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+#quotes{
+  text-align: center
+}
+
+
+
 #border{
  border: .1px solid black;
  width: 230px;
