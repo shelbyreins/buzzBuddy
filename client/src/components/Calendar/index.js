@@ -1,6 +1,9 @@
 import React from "react";
 import { drinks } from "../UserFunctions";
+// import Modal from "./components/Modal";
 import "./style.css";
+
+
 
 class Day extends React.Component {
   constructor(props) { super(props); }

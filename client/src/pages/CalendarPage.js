@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Calendar from "./../components/Calendar";
 import BarChart from "./../components/BarChart";
 import YouTube from "./../components/YouTube";
-import Hero from "./../components/Hero"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class CalendarPage extends Component {
     render() {
