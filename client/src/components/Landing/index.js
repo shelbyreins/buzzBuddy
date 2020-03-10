@@ -12,15 +12,15 @@ class Landing extends Component {
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
           </ol>
-          <div className="carousel-inner">
-            <div className="carousel-item active">
+          <div className="carousel-inner ">
+            <div className="carousel-item active ">
               <img className="d-block w-100 slides" src="../image1.jpg" alt="First slide" />
-              <div class="carousel-caption d-none d-md-block">
+              <div class="carousel-caption d-none d-md-block ">
                 <h2>Hold yourself Accountable</h2>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
               </div>
             </div>
-            <div className="carousel-item  align-items-center">
+            <div className="carousel-item ">
               <img className="d-block w-100 slides" src="../image3.jpeg" alt="Second slide" />
               <div class="carousel-caption d-none d-md-block">
                 <h2>Track your Journey</h2>
@@ -46,17 +46,17 @@ class Landing extends Component {
         </div>
         {/* </div> */}
 
-        <div className="jumbotron">
+        <div className="jumbotron mb-0 pb-1" id="background-jumbotron3">
           <div className="container">
             <div className="row">
-              <div className="col-md-6">
-                <h2>Why Buzz Buddy?</h2>
-                <p> Buzz Buddy is the perfect buddy for you.  <br /> Built to track your daily alcohol intake and keep a record of your daily drinking history making it available to you in a calendar view. </p>
+              <div className="col-md-6 pl-4">
+                <h2 className="landing-title">Why Buzz Buddy?</h2>
+                <p className="landing-title"> Buzz Buddy is the perfect buddy for you.  <br /> Built with you in mind. Buzz Buddy has all <br/> the resources  and support to help you stop drinking. <br/> For good this time. </p>
 
               </div>
               <div className="col-md-6">
-                <h2>How it works?</h2>
-                <p>Create an account and get tracking now... <br /> Make the change!</p>
+                <h2 className="landing-title">How it works?</h2>
+                <p className="landing-title">Create an account and get tracking now... < br/> Buzz Buddy is not here to track alcohol intake, <br/> we track events. Be Proud! <br/> Did you go to an AA Meeting today? Track It! <br/> Check out all our resources and track your journey!</p>
 
               </div>
             </div>

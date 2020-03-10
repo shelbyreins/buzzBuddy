@@ -7,6 +7,7 @@ class Navbar extends Component {
     e.preventDefault()
     localStorage.removeItem('usertoken')
     this.props.history.push(`/`)
+
   }
 
   render() {
@@ -25,6 +26,7 @@ class Navbar extends Component {
       </div>
     )
 
+
     const userLink = (
       <div className="navbar-nav" >
         {/* <div className="nav-item">
@@ -32,6 +34,7 @@ class Navbar extends Component {
             User
           </Link>
         </div> */}
+  
         <div className="nav-item">
           <a href="#" onClick={this.logOut.bind(this)} className="nav-link">
             Logout

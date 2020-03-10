@@ -13,7 +13,6 @@ class Register extends Component {
       gender: '',
       age: '',
       weight: '',
-
       errors: {}
     }
 
@@ -38,7 +37,7 @@ class Register extends Component {
     }
 
     register(newUser).then(res => {
-      this.props.history.push(`/profile`)
+      this.props.history.push(`/login`)
     })
 
  
@@ -100,6 +99,7 @@ class Register extends Component {
                 <select
                   type="gender"
                   className="form-control"
+                  id="select-inputs"
                   name="gender"
                   placeholder="Select gender"
                   value={this.state.gender}
@@ -135,7 +135,7 @@ class Register extends Component {
               </div>
               <button
                 type="submit"
-                className="btn btn-lg btn-primary btn-block"
+                className="btn btn-lg btn-primary btn-block" id="register-btn"
               >
                 Register!
               </button>
