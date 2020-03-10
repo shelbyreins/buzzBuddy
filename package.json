@@ -41,6 +41,7 @@
     "mongoose": "^5.9.3",
     "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
+    "passport": "^0.4.1",
     "path": "^0.12.7",
     "react-bootstrap": "^1.0.0-beta.17",
     "react-monthly-events": "0.0.7",
