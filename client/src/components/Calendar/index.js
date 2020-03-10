@@ -31,7 +31,7 @@ class Form extends React.Component {
     return (
       <form onSubmit={(e) => this.props.submit(e)} >
         <div className="input-group">
-          <select className="input-main mb-2"
+          <select className="input-main mb-2" id="calendar-select"
             onChange={(e) => this.props.update(e.target.value)}
             type="event" placeholder="Select Event"
             value={this.props.value}
@@ -61,7 +61,7 @@ class Form extends React.Component {
           </input>
       
           {/* <input id="drink" placeholder="quantity" type="text"></input> */}
-          <button type="submit" className="btn-main pb-3" id="btn-calendar">Add Event</button>
+          <button type="submit" className="btn-main" id="btn-calendar">Add Event</button>
         </div>
       </form>
     );

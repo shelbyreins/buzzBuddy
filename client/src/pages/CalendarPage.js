@@ -24,74 +24,85 @@ class CalendarPage extends Component {
 
                         </div>
                         <div className="col-md-9">
-                            {/* <div className="mt-5"> */}
                             <BarChart />
                         </div>
                     </div>
                 </div>
 
-                {/* </div>
-                            */}
+                <br />
+                <br />
+                <br />
+
+                <div id="modal-container">
+                    <button className="btn btn-primary" id="modal-btn">Add an Event</button>
+
+                </div>
+
                 {/* <div>
                                 <YouTube />
                             </div> */}
 
-                <div className="jumbotron background-jumbotron">
-                    {/* <div className="container"> */}
-                    <div className="row">
-                        <div className="col-md-6">
-                            <h2>Why Buzz Buddy?</h2>
-                            <p> Buzz Buddy is the perfect buddy for you.  <br /> Built to track your daily alcohol intake and keep a record of your daily drinking history making it available to you in a calendar view. </p>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <div>
+                    <div className="row info-border">
+                        <div className="col-md-6  half-right pl-5 pr-0">
+                            <div>
+                                <h2>Attend an AA Meeting</h2>
+                                <p> INSERT MESSAGE</p>
+                                <div className="event-btn-container">
+                                    <button className="btn btn-primary event-btn" >Click Me!</button>
 
-                        </div>
-                        <div className="col-md-6">
-                            <h2>How it works?</h2>
-                            <p>Create an account and get tracking now... <br /> Make the change!</p>
-
-                        </div>
-                    </div>
-
-                    {/* </div> */}
-                </div>
-
-                <div className="jumbotron background-jumbotron">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-6">
-                                <h2>Why Buzz Buddy?</h2>
-                                <p> Buzz Buddy is the perfect buddy for you.  <br /> Built to track your daily alcohol intake and keep a record of your daily drinking history making it available to you in a calendar view. </p>
-
+                                </div>
                             </div>
-                            <div className="col-md-6">
-                                <h2>How it works?</h2>
-                                <p>Create an account and get tracking now... <br /> Make the change!</p>
+                        </div>
+                        <div className="col-sm-6 half-left pl-0 pr-0" >
+                            <img src="../meeting1.jpeg" alt="meeting" id="meeting" className="calendar-img" />
 
-                            </div>
                         </div>
 
                     </div>
-                </div>
 
-                <div className="jumbotron background-jumbotron">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-6">
-                                <h2>Why Buzz Buddy?</h2>
-                                <p> Buzz Buddy is the perfect buddy for you.  <br /> Built to track your daily alcohol intake and keep a record of your daily drinking history making it available to you in a calendar view. </p>
+                    <div className="row info-border">
+                        <div className="col-md-6 half-right pl-0 pr-0">
+                            <img src="../video1.jpeg" alt="meetup1" id="meetup1" className="calendar-img" />
+                        </div>
+                        <div className="col-md-6 half-left pl-5 pr-0">
+                            <div>
+                                <h2>Watch a Motivational Video</h2>
+                                <p> Can't attend a meeting today? That's okay! Watch an AA Meeting online or a motivational speaker. </p>
+                                <div className="event-btn-container">
+                                    <button className="btn btn-primary event-btn" >Click Me!</button>
 
-                            </div>
-                            <div className="col-md-6">
-                                <h2>How it works?</h2>
-                                <p>Create an account and get tracking now... <br /> Make the change!</p>
-
+                                </div>
                             </div>
                         </div>
 
                     </div>
+
+
+                    <div className="row info-border">
+                        <div className="col-md-6  half-right pl-5 pr-0 ">
+                            <div>
+                                <h2>Find a local Meetup</h2>
+                                <p>Need to find a new hobby? Perfect, Meetup is a great way to people with the same interests as you!</p>
+                                <div className="event-btn-container">
+                                    <button className="btn btn-primary event-btn" >Click Me!</button>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-6 half-left pl-0 pr-0">
+                            <img src="../meetup1.png" alt="video" id="video" className="calendar-img1" />
+                        </div>
+
+                    </div>
+
+
                 </div>
-
-
-
             </div>
 
         );
