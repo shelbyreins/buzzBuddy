@@ -11,22 +11,22 @@ class Navbar extends Component {
 
   render() {
     const loginRegLink = (
-      <div className="navbar-nav">
+      <div className="navbar-nav " >
         <div className="nav-item">
-          <Link to="/login" className="nav-link">
-            Login
+          <Link to="/login" className="nav-link" >
+          <span class="glyphicon glyphicon-log-in"></span> Login
           </Link>
         </div>
         <div className="nav-item">
           <Link to="/register" className="nav-link">
-            Register
+          <span class="glyphicon glyphicon-user"></span> Register
           </Link>
         </div>
       </div>
     )
 
     const userLink = (
-      <div className="navbar-nav">
+      <div className="navbar-nav" >
         {/* <div className="nav-item">
           <Link to="/profile" className="nav-link">
             User
@@ -63,8 +63,10 @@ class Navbar extends Component {
           className="collapse navbar-collapse "
           id="navbarsExample10"
         >
-          
+          <div id="links"> 
           {localStorage.usertoken ? userLink : loginRegLink}
+          </div>
+          
         </div>
       </nav>
     )
