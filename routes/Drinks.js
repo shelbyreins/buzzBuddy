@@ -9,10 +9,11 @@ drinks.post("/addDrink", function(req, res) {
     const drinkData = {
 
         userId: req.body.userId,
-        // event: req.body.event,
+        event: req.body.event,
         allEvents: req.body.allEvents,
-        // quantity: req.body.quantity,
-        // price: req.body.price
+        quantity: req.body.quantity,
+        price: req.body.price,
+        date: req.body.date
     };
 
     Drink.create(drinkData)
@@ -23,5 +24,15 @@ drinks.post("/addDrink", function(req, res) {
             res.send('error: ' + err)
         })
 });
+
+drinks.get("/getAllEvents/:userId", function(req, res) {
+    Drink.find({ userId: req.params.userId})
+        .then(function(events) {
+            res.json(events);
+        })
+        .catch(function(err) {
+            res.json(err);
+        })
+})
 
 module.exports = drinks;
