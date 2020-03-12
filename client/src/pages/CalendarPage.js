@@ -8,26 +8,56 @@ import { Link } from 'react-router-dom'
 
 
 class CalendarPage extends Component {
+
+    state = {
+        quotes: [],
+        counter: 0
+    }
+
     componentDidMount() {
         fetch(
-            "https://quote-garden.herokuapp.com/quotes/search/happy"
+            "https://quote-garden.herokuapp.com/quotes/search/successful"
         )
             .then(response => response.json())
+
             .then(data => {
+                let results = data.results
+                console.log(results)
+                results = results.map(result => {
+                    result = {
+                        quote: result.quoteText,
+                        author: result.quoteAuthor
+                    }
+                    console.log(result)
+                    return result;
+                })
                 this.setState({
-                    data: data,
+                    quotes: results
                 });
-                console.log(data)
+                this.counter()
+                // console.log(this.state.quotes)
+                // console.log(results)
+
             });
     }
 
+    setCounter = () => {
+        this.setState({ counter: this.state.counter >= this.state.quotes.length - 1 ? 0 : this.state.counter + 1 })
+    }
+
+    counter = () => {
+        setInterval(() => { this.setCounter() }, 10000)
+    }
+
+
     render() {
         let now = new Date();
+        console.log("this.state.quotes[0]: " + JSON.stringify(this.state.quotes[0]))
         return (
             <div>
-                <div className="jumbotron">
+                <div className="jumbotron" id="quotes-container">
                     <div className="container">
-                        <h4 id="quotes">QUOTES GO HERE</h4>
+                        <h4 id="quotes">{this.state.quotes[this.state.counter] ? this.state.quotes[this.state.counter].quote : ''}</h4>
                     </div>
                 </div>
 
@@ -35,7 +65,11 @@ class CalendarPage extends Component {
                     <div className="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div className="modal-dialog modal-dialog-centered" role="document">
                             <div className="modal-content">
+                                
                                 <div className="modal-body">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                                     <Calendar year={now.getFullYear()} month={now.getMonth() + 1} day={now.getDate()} id="calendar-comp" />
                                 </div>
                             </div>
@@ -43,7 +77,9 @@ class CalendarPage extends Component {
                     </div>
                 </div>
 
-                <BarChart />
+                <div className="container">
+                    <BarChart />
+                </div>
 
                 <br />
                 <br />
@@ -61,7 +97,7 @@ class CalendarPage extends Component {
                                 <h2>Attend an AA Meeting</h2>
                                 <p> INSERT MESSAGE</p>
                                 <div className="event-btn-container">
-                                <Link to="/resource" className="btn btn-primary event-btn">
+                                    <Link to="/resource" className="btn btn-primary event-btn">
                                         Click Me!
                                     </Link>
                                     {/* <button className="btn btn-primary event-btn" >Click Me!</button> */}
@@ -98,7 +134,7 @@ class CalendarPage extends Component {
                                 <h2>Find a local Meetup</h2>
                                 <p>Need to find a new hobby? Perfect, Meetup is a great way to people with the same interests as you!</p>
                                 <div className="event-btn-container">
-                                <Link to="/resource" className="btn btn-primary event-btn">
+                                    <Link to="/resource" className="btn btn-primary event-btn">
                                         Click Me!
                                     </Link>
                                     {/* <button className="btn btn-primary event-btn">Click Me!</button> */}
