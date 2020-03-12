@@ -9,17 +9,20 @@ const DrinkSchema = new Schema({
   },
   allEvents: {
     type: Object,
+  },
+  event: {
+    type: String,
+    required: true
+  },
+  quantity: {
+    type: Number
+  },
+  price: {
+      type: Number 
+  },
+  date: {
+    type: String
   }
-  // event: {
-  //   type: String,
-  //   required: true
-  // },
-  // quantity: {
-  //   type: Number
-  // },
-  // price: {
-  //     type: Number 
-  // }
 });
 
 module.exports = Drink = mongoose.model('drinks', DrinkSchema)

@@ -1,5 +1,5 @@
 import React from "react";
-import { drinks } from "../UserFunctions";
+import { drinks, getAllEvents } from "../UserFunctions";
 // import Modal from "./components/Modal";
 import "./style.css";
 
@@ -49,17 +49,17 @@ class Form extends React.Component {
           //   type="text" placeholder="Alcohol Type"
           //   value={this.props.value}>
           // </input> */}
-          <input className="input-main mb-2 " 
+          <input className="input-main mb-2 "
             onChange={(e) => this.props.updateQ(e.target.value)}
-            placeholder="quantity" 
+            placeholder="quantity"
             type="text">
           </input>
-          <input className="input-main mb-3" 
+          <input className="input-main mb-3"
             onChange={(e) => this.props.updateP(e.target.value)}
-            placeholder="price" 
+            placeholder="price"
             type="text">
           </input>
-      
+
           {/* <input id="drink" placeholder="quantity" type="text"></input> */}
           <button type="submit" className="btn-main" id="btn-calendar">Add Event</button>
         </div>
@@ -149,7 +149,7 @@ class Calendar extends React.Component {
 
   saveEvents() {
     localStorage.setItem("events", JSON.stringify(this.state.events));
-    
+
     localStorage.setItem("event", this.state.event);
     localStorage.setItem("quantity", this.state.quantity);
     localStorage.setItem("price", this.state.price);
@@ -157,7 +157,8 @@ class Calendar extends React.Component {
       userId: localStorage.getItem("userId"),
       event: localStorage.getItem("event"),
       quantity: localStorage.getItem("quantity"),
-      price: localStorage.getItem("price")
+      price: localStorage.getItem("price"),
+      date: this.state.cursor
     }
     console.log("userData: " + JSON.stringify(userData));
     drinks(userData).then(res => {
@@ -168,8 +169,22 @@ class Calendar extends React.Component {
     })
   }
   loadEvents() {
-    let events = localStorage.getItem("events");
-    if (events) this.setState({ events: JSON.parse(events) });
+    // let events = localStorage.getItem("events");
+    let occasions = {};
+    let userId = {
+      userId: localStorage.getItem("userId"),
+    };
+    getAllEvents(userId).then(res => {
+      if (res) {
+
+        res.forEach(entry => {
+          occasions[entry.date] = [entry.event];
+        });
+        if (occasions) {
+          this.setState({ events: occasions });
+        }
+      }
+    });
   }
   getEvents(key) {
     if (this.state.events[key]) {
@@ -267,42 +282,43 @@ class Calendar extends React.Component {
     let events = this.getEvents(this.state.cursor).map((item, i) => {
       return (
         <li key={i}>{item}
-          <a href="#"  onClick={() => this.removeEvent(this.state.cursor, i)}>–</a>
+          <a href="#" onClick={() => this.removeEvent(this.state.cursor, i)}>–</a>
         </li>
       );
     });
 
     return (
       <React.Fragment>
-  <div id="border">
-        <div className="calendar" > 
-          {/* Month selector */}
-          <div className="month">
-            <span className="month-active">
-              <b>{this.getMonthName(this.state.month)}</b>{" " + this.state.year}
-            </span>
-            <span className="month-selector">
-              <a className="prev" href="#" onClick={this.prevMonth}>⟵</a>
-              <a className="reset" href="#" onClick={this.resetDate}>○</a>
-              <a className="next" href="#" onClick={this.nextMonth}>⟶</a>
-            </span>
+
+        <div id="border">
+          <div className="calendar" >
+            {/* Month selector */}
+            <div className="month">
+              <span className="month-active">
+                <b>{this.getMonthName(this.state.month)}</b>{" " + this.state.year}
+              </span>
+              <span className="month-selector">
+                <a className="prev" href="#" onClick={this.prevMonth}>⟵</a>
+                <a className="reset" href="#" onClick={this.resetDate}>○</a>
+                <a className="next" href="#" onClick={this.nextMonth}>⟶</a>
+              </span>
+            </div>
+            {/* Days grid */}
+            <div className="weekdays">{dayNames}</div>
+            <div className="days">{days}</div>
           </div>
-          {/* Days grid */}
-          <div className="weekdays">{dayNames}</div>
-          <div className="days">{days}</div>
-        </div>
 
-        {/* Event list */}
-        <div className="events">
-          <h4 className="date-active">{this.state.cursor}</h4>
-          {events.length > 0 && (<ul className="ml-5">{events}</ul>)}
-        </div>
+          {/* Event list */}
+          <div className="events">
+            <h4 className="date-active">{this.state.cursor}</h4>
+            {events.length > 0 && (<ul className="ml-5">{events}</ul>)}
+          </div>
 
-        {/* New event */}
-        <div className="event-add">
-          {/* <h2>Add new event</h2> */}
-          <Form value={this.state.event} submit={this.addEvent} update={this.updateEvent} updateQ={this.updateQuantity} updateP={this.updatePrice}/>
-        </div>
+          {/* New event */}
+          <div className="event-add">
+            {/* <h2>Add new event</h2> */}
+            <Form value={this.state.event} submit={this.addEvent} update={this.updateEvent} updateQ={this.updateQuantity} updateP={this.updatePrice} />
+          </div>
         </div>
       </React.Fragment>
     );

@@ -56,10 +56,7 @@ class Register extends Component {
       else {
         alert("You must be 21 years or older");
       }
-
     }
-
- 
 }
 
   render() {
