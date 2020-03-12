@@ -15,7 +15,10 @@
     font-size: 1rem;
     /* text-align: center; */
     background-color: #fff;
-    color: #111; }
+    color: #111; 
+    padding: 0px;
+    overflow-x: hidden; 
+  }
   
   h1 {
     margin: 2.5rem 0 1.5rem 0; }
@@ -36,35 +39,6 @@
     text-align: center 
   }
   
-  /* .background-jumbotron1{
-    background: linear-gradient(
-      to right, 
-      #f9f9f7 0%, 
-      #f9f9f7   50%, 
-      #e7e7ef 50%, 
-      #e7e7ef 100%
-    );  
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    margin-bottom:0px;
-  }
-  .background-jumbotron2{
-    background: linear-gradient(
-      to right, 
-      #e7e7ef 0%, 
-      #e7e7ef   50%, 
-      #f9f9f7 50%, 
-      #f9f9f7  100%
-    );  
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    margin-bottom:0px;
-  } */
-  
   .calendar-img{
     width:100%;
     height:200px;
@@ -80,9 +54,19 @@
   
   }
   #modal-btn{
-    height: 30px;
+    height: 60px;
     width: 20%;
     border-radius:0px;
+    font-size:1.6em;
+    letter-spacing: 3px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 1px rgb(35, 54, 65) solid;
+    background: rgba(6, 88, 118, 0.66);
+  }
+
+  #modal-btn:hover{
+    background-color: rgb(111, 132, 145); 
+    
   }
   
   #modal-container{
@@ -117,14 +101,28 @@
   
   
   #quotes{
-    text-align: center
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1.1px;
+    font-weight: 500 ;
+    font-size: 1.5em;
+  }
+  
+  #quotes-container{
+    /* margin-top: 20px; */
+    background-color: rgba(6, 88, 118, 0.66);
+    color:white;
   }
   
   
-  
   #border{
-   border: .1px solid black;
+   border: 1px solid black;
    width: 230px;
+   text-align: center ;
+   margin-left:auto;
+   margin-right:auto;
+   margin-top:15px;
+   margin-bottom: 15px;
   }
 
   .calendar-modal{
@@ -308,4 +306,20 @@
           top: 1.5vw;
           left: 1.5vw;
           width: 1.5vw;
-          height: 1.5vw; } }
+          height: 1.5vw; }
+        #border{
+          width:103%;
+          margin-top:40px;
+          padding-left:0px !important;
+          
+        }
+        .modal-body{
+          padding-left:0px
+        }
+        #modal-btn{
+          width:auto
+        }
+        .event-btn{
+          width:auto
+        }
+         }

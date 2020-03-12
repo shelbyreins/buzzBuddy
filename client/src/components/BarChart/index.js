@@ -11,31 +11,31 @@ class BarChart extends Component {
             animationEnabled: true,
             theme: "light2",
             title: {
-                text: "Monthly Alcohol Intake"
+                text: "Events Tracker"
             },
             axisX: {
-                title: "Months",
+                title: "Events",
                 reversed: true,
             },
             axisY: {
-                title: "Quantity of Alcohol",
+                title: "# of days",
                 labelFormatter: this.addSymbols
             },
             data: [{
                 type: "bar",
                 dataPoints: [
-                    { y: 2200000000, label: "January" },
-                    { y: 1800000000, label: "February" },
-                    { y: 800000000, label: "March" },
-                    { y: 563000000, label: "April" },
-                    { y: 376000000, label: "May" },
-                    { y: 336000000, label: "June" },
-                    { y: 330000000, label: "July" },
-                    { y: 330000000, label: "August" },
-                    { y: 330000000, label: "September" },
-                    { y: 330000000, label: "October" },
-                    { y: 330000000, label: "November" },
-                    { y: 330000000, label: "December" },
+                    { y: 1, label: "Attend AA" },
+                    { y: 6, label: "Watched Video" },
+                    { y: 12, label: "MeetUp" },
+                    { y: 18, label: "Alcohol" },
+                    { y: 26, label: "No Alcohol" },
+                    { y: 31, label: "Other" },
+                    // { y: 330000000, label: "July" },
+                    // { y: 330000000, label: "August" },
+                    // { y: 330000000, label: "September" },
+                    // { y: 330000000, label: "October" },
+                    // { y: 330000000, label: "November" },
+                    // { y: 330000000, label: "December" },
                 ]
             }]
         }

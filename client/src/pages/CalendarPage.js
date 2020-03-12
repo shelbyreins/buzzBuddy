@@ -1,119 +1,94 @@
 import React, { Component } from "react";
 import Calendar from "./../components/Calendar";
 import BarChart from "./../components/BarChart";
-
-
+import { Link } from 'react-router-dom'
+// import YouTube from "./../components/YouTube";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
 class CalendarPage extends Component {
 
-state ={
-    quotes : [],
-    counter: 0
-}
+    state = {
+        quotes: [],
+        counter: 0
+    }
 
-componentDidMount() {
-    fetch(
-      "https://quote-garden.herokuapp.com/quotes/search/happy"
-    )
-      .then(response => response.json())
-      
-      .then(data => {
-          let results = data.results
-          console.log(results)
-          results = results.map(result  => {
-              result ={
-                  quote:result.quoteText,
-                  author:result.quoteAuthor
-              }
-              console.log(result)
-              return result;
-          })
-        this.setState({
-          quotes: results
-        });
-        this.counter()
-        // console.log(this.state.quotes)
-        // console.log(results)
-        
-      });    
-  }
+    componentDidMount() {
+        fetch(
+            "https://quote-garden.herokuapp.com/quotes/search/successful"
+        )
+            .then(response => response.json())
 
-  setCounter=()=>{
-      this.setState({counter: this.state.counter >= this.state.quotes.length-1 ? 0 : this.state.counter+1})
-  }
+            .then(data => {
+                let results = data.results
+                console.log(results)
+                results = results.map(result => {
+                    result = {
+                        quote: result.quoteText,
+                        author: result.quoteAuthor
+                    }
+                    console.log(result)
+                    return result;
+                })
+                this.setState({
+                    quotes: results
+                });
+                this.counter()
+                // console.log(this.state.quotes)
+                // console.log(results)
 
-  counter =()=>{
-      setInterval(()=>{this.setCounter()}, 4000)
-  }
+            });
+    }
 
-    
+    setCounter = () => {
+        this.setState({ counter: this.state.counter >= this.state.quotes.length - 1 ? 0 : this.state.counter + 1 })
+    }
+
+    counter = () => {
+        setInterval(() => { this.setCounter() }, 10000)
+    }
+
+
     render() {
         let now = new Date();
         console.log("this.state.quotes[0]: " + JSON.stringify(this.state.quotes[0]))
         return (
             <div>
-
-                {/* <div className="jumbotron">
+                <div className="jumbotron" id="quotes-container">
                     <div className="container">
-                        <h4 id="quotes">{this.state.quotes[this.state.counter]? this.state.quotes[this.state.counter].quote : ''}</h4>
-                        {/* <h3>{this.state.quotes[0].quote */}
-                        {/* <h4>{this.state.quotes}</h4> */}
-                        {/* <QuotesCard quotes={this.state.quotes}/> */}
+                        <h4 id="quotes">{this.state.quotes[this.state.counter] ? this.state.quotes[this.state.counter].quote : ''}</h4>
                     </div>
                 </div>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-3">
-                            <main id="app" className="ml-5 mt-5 ">
-                                <Calendar year={now.getFullYear()} month={now.getMonth() + 1} day={now.getDate()} />
-                            </main>
 
-                        </div>
-                        <div className="col-md-9">
-                            <BarChart />
-                        </div>
-                    </div>
-                </div> */}
                 <div className="calendar-modal">
                     <div className="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div className="modal-dialog modal-dialog-centered" role="document">
                             <div className="modal-content">
+                                
                                 <div className="modal-body">
-                                    <Calendar year={now.getFullYear()} month={now.getMonth() + 1} day={now.getDate()} id="calendar-comp"/>
-
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                    <Calendar year={now.getFullYear()} month={now.getMonth() + 1} day={now.getDate()} id="calendar-comp" />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <BarChart />
+                <div className="container">
+                    <BarChart />
+                </div>
 
                 <br />
                 <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-
-
-                
 
                 <div id="modal-container">
                     <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="modal-btn">Add an Event</button>
-
                 </div>
 
-                {/* <div>
-                                <YouTube />
-                            </div> */}
-
                 <br />
-
 
                 <div>
                     <div className="row info-border">
@@ -122,16 +97,16 @@ componentDidMount() {
                                 <h2>Attend an AA Meeting</h2>
                                 <p> INSERT MESSAGE</p>
                                 <div className="event-btn-container">
-                                    <button className="btn btn-primary event-btn" >Click Me!</button>
-
+                                    <Link to="/resource" className="btn btn-primary event-btn">
+                                        Click Me!
+                                    </Link>
+                                    {/* <button className="btn btn-primary event-btn" >Click Me!</button> */}
                                 </div>
                             </div>
                         </div>
                         <div className="col-sm-6 half-left pl-0 pr-0" >
                             <img src="../meeting1.jpeg" alt="meeting" id="meeting" className="calendar-img" />
-
                         </div>
-
                     </div>
 
                     <div className="row info-border">
@@ -143,14 +118,15 @@ componentDidMount() {
                                 <h2>Watch a Motivational Video</h2>
                                 <p> Can't attend a meeting today? That's okay! Watch an AA Meeting online or a motivational speaker. </p>
                                 <div className="event-btn-container">
-                                    <button className="btn btn-primary event-btn" >Click Me!</button>
+                                    <Link to="/resource" className="btn btn-primary event-btn">
+                                        Click Me!
+                                    </Link>
+                                    {/* <button className="btn btn-primary event-btn" >Click Me!</button> */}
 
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
 
                     <div className="row info-border">
                         <div className="col-md-6  half-right pl-5 pr-0 ">
@@ -158,7 +134,10 @@ componentDidMount() {
                                 <h2>Find a local Meetup</h2>
                                 <p>Need to find a new hobby? Perfect, Meetup is a great way to people with the same interests as you!</p>
                                 <div className="event-btn-container">
-                                    <button className="btn btn-primary event-btn">Click Me!</button>
+                                    <Link to="/resource" className="btn btn-primary event-btn">
+                                        Click Me!
+                                    </Link>
+                                    {/* <button className="btn btn-primary event-btn">Click Me!</button> */}
 
                                 </div>
                             </div>
@@ -168,8 +147,6 @@ componentDidMount() {
                         </div>
 
                     </div>
-
-
                 </div>
             </div>
 
