@@ -126,6 +126,21 @@
    border: .1px solid black;
    width: 230px;
   }
+
+  .calendar-modal{
+    z-index:9999;
+    position:fixed;
+    opacity:5;
+    background: #111;
+   
+  }
+
+  #calendar-comp{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   margin:0px;
+  }
   
   button {
     font: inherit;

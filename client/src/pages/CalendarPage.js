@@ -5,7 +5,9 @@ import BarChart from "./../components/BarChart";
 
 
 
+
 class CalendarPage extends Component {
+
 state ={
     quotes : [],
     counter: 0
@@ -53,7 +55,7 @@ componentDidMount() {
         return (
             <div>
 
-                <div className="jumbotron">
+                {/* <div className="jumbotron">
                     <div className="container">
                         <h4 id="quotes">{this.state.quotes[this.state.counter]? this.state.quotes[this.state.counter].quote : ''}</h4>
                         {/* <h3>{this.state.quotes[0].quote */}
@@ -73,15 +75,36 @@ componentDidMount() {
                             <BarChart />
                         </div>
                     </div>
+                </div> */}
+                <div className="calendar-modal">
+                    <div className="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div className="modal-dialog modal-dialog-centered" role="document">
+                            <div className="modal-content">
+                                <div className="modal-body">
+                                    <Calendar year={now.getFullYear()} month={now.getMonth() + 1} day={now.getDate()} id="calendar-comp"/>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <BarChart />
 
                 <br />
                 <br />
-                
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+
+
                 
 
                 <div id="modal-container">
-                    <button className="btn btn-primary" id="modal-btn">Add an Event</button>
+                    <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="modal-btn">Add an Event</button>
 
                 </div>
 
@@ -90,8 +113,8 @@ componentDidMount() {
                             </div> */}
 
                 <br />
-                
-                
+
+
                 <div>
                     <div className="row info-border">
                         <div className="col-md-6  half-right pl-5 pr-0">
