@@ -5,13 +5,27 @@ import BarChart from "./../components/BarChart";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
 class CalendarPage extends Component {
+    componentDidMount() {
+        fetch(
+            "https://quote-garden.herokuapp.com/quotes/search/happy"
+        )
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    data: data,
+                });
+                console.log(data)
+            });
+    }
+
     render() {
         let now = new Date();
         return (
             <div>
 
-                <div className="jumbotron">
+                {/* <div className="jumbotron">
                     <div className="container">
                         <h4 id="quotes">QUOTES GO HERE</h4>
                     </div>
@@ -28,15 +42,36 @@ class CalendarPage extends Component {
                             <BarChart />
                         </div>
                     </div>
+                </div> */}
+                <div className="calendar-modal">
+                    <div className="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div className="modal-dialog modal-dialog-centered" role="document">
+                            <div className="modal-content">
+                                <div className="modal-body">
+                                    <Calendar year={now.getFullYear()} month={now.getMonth() + 1} day={now.getDate()} id="calendar-comp"/>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <BarChart />
 
                 <br />
                 <br />
-                
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+
+
                 
 
                 <div id="modal-container">
-                    <button className="btn btn-primary" id="modal-btn">Add an Event</button>
+                    <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="modal-btn">Add an Event</button>
 
                 </div>
 
@@ -45,8 +80,8 @@ class CalendarPage extends Component {
                             </div> */}
 
                 <br />
-                
-                
+
+
                 <div>
                     <div className="row info-border">
                         <div className="col-md-6  half-right pl-5 pr-0">
