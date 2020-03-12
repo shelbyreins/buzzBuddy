@@ -15,21 +15,21 @@ class Landing extends Component {
           <div className="carousel-inner ">
             <div className="carousel-item active ">
               <img className="d-block w-100 slides" src="../image1.jpg" alt="First slide" />
-              <div class="carousel-caption d-none d-md-block ">
+              <div class="carousel-caption  d-md-block ">
                 <h2>Hold yourself Accountable</h2>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
               </div>
             </div>
             <div className="carousel-item ">
               <img className="d-block w-100 slides" src="../image3.jpeg" alt="Second slide" />
-              <div class="carousel-caption d-none d-md-block">
+              <div class="carousel-caption  d-md-block">
                 <h2>Track your Journey</h2>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
               </div>
             </div>
             <div className="carousel-item">
               <img className="d-block w-100 slides" src="../image2.jpeg" alt="Third slide" />
-              <div class="carousel-caption d-none d-md-block">
+              <div class="carousel-caption  d-md-block">
                 <h2>Save Money</h2>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
               </div>

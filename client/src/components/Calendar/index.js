@@ -289,37 +289,36 @@ class Calendar extends React.Component {
 
     return (
       <React.Fragment>
+              <div id="border">
+                <div className="calendar" >
+                  {/* Month selector */}
+                  <div className="month">
+                    <span className="month-active">
+                      <b>{this.getMonthName(this.state.month)}</b>{" " + this.state.year}
+                    </span>
+                    <span className="month-selector">
+                      <a className="prev" href="#" onClick={this.prevMonth}>⟵</a>
+                      <a className="reset" href="#" onClick={this.resetDate}>○</a>
+                      <a className="next" href="#" onClick={this.nextMonth}>⟶</a>
+                    </span>
+                  </div>
+                  {/* Days grid */}
+                  <div className="weekdays">{dayNames}</div>
+                  <div className="days">{days}</div>
+                </div>
 
-        <div id="border">
-          <div className="calendar" >
-            {/* Month selector */}
-            <div className="month">
-              <span className="month-active">
-                <b>{this.getMonthName(this.state.month)}</b>{" " + this.state.year}
-              </span>
-              <span className="month-selector">
-                <a className="prev" href="#" onClick={this.prevMonth}>⟵</a>
-                <a className="reset" href="#" onClick={this.resetDate}>○</a>
-                <a className="next" href="#" onClick={this.nextMonth}>⟶</a>
-              </span>
-            </div>
-            {/* Days grid */}
-            <div className="weekdays">{dayNames}</div>
-            <div className="days">{days}</div>
-          </div>
+                {/* Event list */}
+                <div className="events">
+                  <h4 className="date-active">{this.state.cursor}</h4>
+                  {events.length > 0 && (<ul className="ml-5">{events}</ul>)}
+                </div>
 
-          {/* Event list */}
-          <div className="events">
-            <h4 className="date-active">{this.state.cursor}</h4>
-            {events.length > 0 && (<ul className="ml-5">{events}</ul>)}
-          </div>
-
-          {/* New event */}
-          <div className="event-add">
-            {/* <h2>Add new event</h2> */}
-            <Form value={this.state.event} submit={this.addEvent} update={this.updateEvent} updateQ={this.updateQuantity} updateP={this.updatePrice} />
-          </div>
-        </div>
+                {/* New event */}
+                <div className="event-add">
+                  {/* <h2>Add new event</h2> */}
+                  <Form value={this.state.event} submit={this.addEvent} update={this.updateEvent} updateQ={this.updateQuantity} updateP={this.updatePrice} />
+                </div>
+              </div>    
       </React.Fragment>
     );
   }

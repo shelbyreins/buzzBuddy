@@ -5,7 +5,7 @@ import Navbar from './components/Navbar'
 import Landing from './components/Landing'
 import Login from './components/Login'
 import Register from './components/Register'
-import Resource from './components/Resource'
+import Resources from './components/Resource'
 // import Profile from './components/Profile'
 import CalendarPage from "./pages/CalendarPage";
 
@@ -20,7 +20,7 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/profile" component={CalendarPage} />
-            <Route exact path="/resource" component={Resource} />
+            <Route exact path="/resource" component={Resources} />
         </div>
       </Router>
     )
