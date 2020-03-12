@@ -26,3 +26,13 @@
 #links{
     float:right
 }
+
+.navbar-dark .navbar-nav .nav-link {
+    color:white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:1.4em;
+    padding-left: 10px;
+}
+.navbar-dark:hover .navbar-nav:hover .nav-link:hover {
+    color:lightblue;
+}

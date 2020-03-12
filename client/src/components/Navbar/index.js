@@ -15,12 +15,12 @@ class Navbar extends Component {
       <div className="navbar-nav " >
         <div className="nav-item">
           <Link to="/login" className="nav-link" >
-          <span class="glyphicon glyphicon-log-in"></span> Login
+            <span class="glyphicon glyphicon-log-in"></span> Login
           </Link>
         </div>
         <div className="nav-item">
           <Link to="/register" className="nav-link">
-          <span class="glyphicon glyphicon-user"></span> Register
+            <span class="glyphicon glyphicon-user"></span> Register
           </Link>
         </div>
       </div>
@@ -29,12 +29,17 @@ class Navbar extends Component {
 
     const userLink = (
       <div className="navbar-nav" >
-        {/* <div className="nav-item">
+        <div className="nav-item">
           <Link to="/profile" className="nav-link">
-            User
+            Profile
           </Link>
-        </div> */}
-  
+        </div>
+        <div className="nav-item">
+          <Link to="/resource" className="nav-link">
+            Resources
+          </Link>
+        </div>
+
         <div className="nav-item">
           <a href="#" onClick={this.logOut.bind(this)} className="nav-link">
             Logout
@@ -45,11 +50,11 @@ class Navbar extends Component {
 
     return (
       <nav className="navbar navbar-expand-lg navbar-dark" id="navbar">
-       
-              <Link to="/" className="navbar-brand">
-              <img src="../logo11.png" alt="logo" id="logo"/>
-              </Link>
-          
+
+        <div to="/" className="navbar-brand">
+          <img src="../logo11.png" alt="logo" id="logo" />
+        </div>
+
         <button
           className="navbar-toggler ml-auto"
           type="button"
@@ -66,10 +71,10 @@ class Navbar extends Component {
           className="collapse navbar-collapse "
           id="navbarsExample10"
         >
-          <div id="links"> 
-          {localStorage.usertoken ? userLink : loginRegLink}
+          <div id="links">
+            {localStorage.usertoken ? userLink : loginRegLink}
           </div>
-          
+
         </div>
       </nav>
     )
