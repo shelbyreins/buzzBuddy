@@ -274,7 +274,7 @@ class Calendar extends React.Component {
 
     return (
       <React.Fragment>
-  <div id="border" className= "mb-5">
+  <div id="border">
         <div className="calendar" > 
           {/* Month selector */}
           <div className="month">
