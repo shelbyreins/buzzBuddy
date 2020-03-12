@@ -1,33 +1,66 @@
 import React, { Component } from "react";
 import Calendar from "./../components/Calendar";
 import BarChart from "./../components/BarChart";
-// import YouTube from "./../components/YouTube";
-// import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 
 
 class CalendarPage extends Component {
-    componentDidMount() {
-        fetch(
-            "https://quote-garden.herokuapp.com/quotes/search/happy"
-        )
-            .then(response => response.json())
-            .then(data => {
-                this.setState({
-                    data: data,
-                });
-                console.log(data)
-            });
-    }
 
+state ={
+    quotes : [],
+    counter: 0
+}
+
+componentDidMount() {
+    fetch(
+      "https://quote-garden.herokuapp.com/quotes/search/happy"
+    )
+      .then(response => response.json())
+      
+      .then(data => {
+          let results = data.results
+          console.log(results)
+          results = results.map(result  => {
+              result ={
+                  quote:result.quoteText,
+                  author:result.quoteAuthor
+              }
+              console.log(result)
+              return result;
+          })
+        this.setState({
+          quotes: results
+        });
+        this.counter()
+        // console.log(this.state.quotes)
+        // console.log(results)
+        
+      });    
+  }
+
+  setCounter=()=>{
+      this.setState({counter: this.state.counter >= this.state.quotes.length-1 ? 0 : this.state.counter+1})
+  }
+
+  counter =()=>{
+      setInterval(()=>{this.setCounter()}, 4000)
+  }
+
+    
     render() {
         let now = new Date();
+        console.log("this.state.quotes[0]: " + JSON.stringify(this.state.quotes[0]))
         return (
             <div>
 
                 {/* <div className="jumbotron">
                     <div className="container">
-                        <h4 id="quotes">QUOTES GO HERE</h4>
+                        <h4 id="quotes">{this.state.quotes[this.state.counter]? this.state.quotes[this.state.counter].quote : ''}</h4>
+                        {/* <h3>{this.state.quotes[0].quote */}
+                        {/* <h4>{this.state.quotes}</h4> */}
+                        {/* <QuotesCard quotes={this.state.quotes}/> */}
                     </div>
                 </div>
                 <div className="container">
