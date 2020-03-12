@@ -3,9 +3,27 @@ import Calendar from "./../components/Calendar";
 import BarChart from "./../components/BarChart";
 // import YouTube from "./../components/YouTube";
 // import 'bootstrap/dist/css/bootstrap.min.css';
+import API from "./../utils/API"
 
 
 class CalendarPage extends Component {
+state ={
+    quoteData : []
+}
+componentDidMount() {
+    fetch(
+      "https://quote-garden.herokuapp.com/quotes/search/happy"
+    )
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          data: data,
+        });
+        console.log(data.results)
+      });    
+  }
+
+    
     render() {
         let now = new Date();
         return (
