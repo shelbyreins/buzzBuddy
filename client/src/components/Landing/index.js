@@ -14,24 +14,27 @@ class Landing extends Component {
           </ol>
           <div className="carousel-inner ">
             <div className="carousel-item active ">
-              <img className="d-block w-100 slides" src="../image1.jpg" alt="First slide" />
+              <img className="d-block w-100 slides" src="../image4.jpg" alt="First slide" />
               <div class="carousel-caption  d-md-block ">
-                <h1>Hold yourself Accountable</h1>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <div className="steps">Step 1:</div>
+                <h1>Create an account</h1>
+                <h4>Click on the register button on the top left and fill out the form</h4>
               </div>
             </div>
             <div className="carousel-item ">
               <img className="d-block w-100 slides" src="../image3.jpeg" alt="Second slide" />
               <div class="carousel-caption  d-md-block">
-                <h1>Track your Journey</h1>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <div className="steps">Step 2:</div>
+                <h1>Login in and checkout our resouces!</h1>
+                <h4>Buzz Buddy is here with many resources for you to explore</h4>
               </div>
             </div>
             <div className="carousel-item">
               <img className="d-block w-100 slides" src="../image2.jpeg" alt="Third slide" />
               <div class="carousel-caption  d-md-block">
-                <h1>Save Money</h1>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <div className="steps">Step 3:</div>
+                <h1>Track your success!</h1>
+                <h4>Click on Add an Event and select your event for the day</h4>
               </div>
             </div>
           </div>
@@ -46,18 +49,20 @@ class Landing extends Component {
         </div>
         {/* </div> */}
 
+        <h2 className="text-center" id="details">Track your Journey | Hold yourself Accountable | Save Money</h2>
+
         <div className="jumbotron mb-0 pb-1" id="background-jumbotron3">
           <div className="container">
-          <h2 className="text-center">Something something something</h2>
             <div className="row">
-              <div className="col-md-6 pl-4">
+              <div className="col-md-6 landing-border">
                 <h2 className="landing-title">Why Buzz Buddy?</h2>
-                <p className="landing-title"> Buzz Buddy is the perfect buddy for you.  <br /> Built with you in mind. Buzz Buddy has <br/> and support to help you stop drinking. <br/> For good this time. </p>
+                <p className="landing-p"> Buzz Buddy is the perfect buddy for you.  <br /> Built with you in mind. Buzz Buddy has <br/> and support to help you stop drinking. <br/> <strong>For good this time.</strong> </p>
 
               </div>
-              <div className="col-md-6">
+              
+              <div className="col-md-6 landing-border">
                 <h2 className="landing-title">How it works?</h2>
-                <p className="landing-title">Create an account and get tracking now... < br/> Buzz Buddy is not here to track alcohol intake, <br/> we track events. Be Proud! <br/> Did you go to an AA Meeting today? Track It!</p>
+                <p  className="landing-p">Create an account and get tracking now... < br/> Buzz Buddy is not here to track alcohol intake, <br/> we track events. <strong>Be Proud!</strong> <br/> Did you go to an AA Meeting today? Track It!</p>
 
               </div>
             </div>

@@ -83,9 +83,12 @@
   }
   
   .event-btn{
-    height: 30px;
-    width: 20%;
-    border-radius:0px;
+    height: 34px;
+    width: 25%;
+    font-size: 1.2em !important;
+    letter-spacing: 1px;
+    border-radius:0px !important;
+    background-color: rgba(6, 88, 118, 0.66) !important;
     
   }
   
@@ -110,7 +113,7 @@
   
   #quotes-container{
     /* margin-top: 20px; */
-    background-color: rgba(6, 88, 118, 0.66);
+    background-color: rgba(6, 88, 118, 0.55);
     color:white;
   }
   
