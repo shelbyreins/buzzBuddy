@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import "./style.css"
 
 const API = "AIzaSyB9VyhRDYdmbZAXppHK91QeLHrz7NGc9d0";
-const result = 10
+const result = 4
 const q = "motivation"
 
 
@@ -54,14 +54,18 @@ class Resources extends Component {
                 </div>
 
                 </div>
-
-
+                
+                
                 {this.state.videoresult.map((link, i) => {
-                    var frame = <div key={i} className="youtube"><iframe width="560" height="315" src={link} frameBorder="0" allowFullScreen></iframe></div>
+                  
+                   
+                    var frame = <div key={i} id="youtube"><iframe width="270" height="200" src={link} frameBorder="0" allowFullScreen></iframe></div>
+                    
                     return frame
-                    console.log(link)
+                    
                 })
                 }
+                
 
                 {this.frame}
 
