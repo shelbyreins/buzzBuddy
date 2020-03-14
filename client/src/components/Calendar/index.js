@@ -37,18 +37,14 @@ class Form extends React.Component {
             value={this.props.value}
           >
             <option className="inputs">Select Event</option>
-            <option className="inputs">Watched Video</option>
             <option className="inputs">AA Meeting</option>
+            <option className="inputs">Watched Video</option>
+            <option className="inputs">MeetUp</option>
             <option className="inputs">Alcohol Drink</option>
             <option className="inputs">No Alcohol</option>
             <option className="inputs">Other</option>
           </select>
 
-          {/* //<input className="input-main mb-2 " */}
-          {/* //   onChange={(e) => this.props.update(e.target.value)}
-          //   type="text" placeholder="Alcohol Type"
-          //   value={this.props.value}>
-          // </input> */}
           <input className="input-main mb-2 "
             onChange={(e) => this.props.updateQ(e.target.value)}
             placeholder="quantity"
@@ -60,7 +56,6 @@ class Form extends React.Component {
             type="text">
           </input>
 
-          {/* <input id="drink" placeholder="quantity" type="text"></input> */}
           <button type="submit" className="btn-main" id="btn-calendar">Add Event</button>
         </div>
       </form>
@@ -162,6 +157,11 @@ class Calendar extends React.Component {
     }
     drinks(userData).then(res => {
       if (res) {
+
+        // this.props.history.push(`/addDr`);
+        console.log(res);
+        // window.location.reload();
+
       }
     })
   }
