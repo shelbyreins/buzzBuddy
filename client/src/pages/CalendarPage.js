@@ -1,64 +1,21 @@
 import React, { Component } from "react";
 import Calendar from "./../components/Calendar";
 import BarChart from "./../components/BarChart";
+import Quotes from "./../components/Quotes";
 import { Link } from 'react-router-dom'
 // import YouTube from "./../components/YouTube";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
 class CalendarPage extends Component {
-
-    state = {
-        quotes: [],
-        counter: 0
-    }
-
-    componentDidMount() {
-        fetch(
-            "https://quote-garden.herokuapp.com/quotes/search/successful"
-        )
-            .then(response => response.json())
-
-            .then(data => {
-                let results = data.results
-                // console.log(results)
-                results = results.map(result => {
-                    result = {
-                        quote: result.quoteText,
-                        author: result.quoteAuthor
-                    }
-                    // console.log(result)
-                    return result;
-                })
-                this.setState({
-                    quotes: results
-                });
-                this.counter()
-                // console.log(this.state.quotes)
-                // console.log(results)
-
-            });
-    }
-
-    setCounter = () => {
-        this.setState({ counter: this.state.counter >= this.state.quotes.length - 1 ? 0 : this.state.counter + 1 })
-    }
-
-    counter = () => {
-        setInterval(() => { this.setCounter() }, 10000)
-    }
-
 
     render() {
         let now = new Date();
         // console.log("this.state.quotes[0]: " + JSON.stringify(this.state.quotes[0]))
         return (
             <div>
-                <div className="jumbotron" id="quotes-container">
-                    <div className="container">
-                        <h4 id="quotes">{this.state.quotes[this.state.counter] ? this.state.quotes[this.state.counter].quote : ''}</h4>
-                    </div>
+                <div>
+                <Quotes />
+
                 </div>
 
                 <div className="calendar-modal">
@@ -76,7 +33,7 @@ class CalendarPage extends Component {
                         </div>
                     </div>
                 </div>
-
+                
                 <div className="container">
                     <BarChart />
                 </div>
