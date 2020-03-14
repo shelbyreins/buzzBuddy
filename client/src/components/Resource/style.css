@@ -4,5 +4,12 @@
     font-size: 1.3em;
     letter-spacing: 2px;
     margin-bottom: 20px !important;
+    background-color: rgba(6, 88, 118, 0.66) !important;
+    text-align: center;
 
+}
+
+#youtube{
+    display: inline;
+    margin-left: 20px;
 }
