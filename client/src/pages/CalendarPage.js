@@ -52,7 +52,7 @@ class CalendarPage extends Component {
                         <div className="col-md-6  half-right pl-5 pr-0">
                             <div className="event-title pl-5">
                                 <h2>Attend an AA Meeting</h2>
-                                <p> INSERT MESSAGE</p>
+                                <p> Don't know where the closet meeting to you is? </p>
                                 <div className="event-btn-container">
                                     <Link to="/resource" className="btn btn-primary event-btn">
                                         Click Me!
@@ -85,8 +85,8 @@ class CalendarPage extends Component {
                         </div>
                     </div>
 
-                    <div className="row info-border">
-                        <div className="col-md-6  half-right pl-5 pr-0 ">
+                    {/* <div className="row info-border"> */}
+                        {/* <div className="col-md-6  half-right pl-5 pr-0 ">
                             <div className="event-title pl-5">
                                 <h2>Find a local Meetup</h2>
                                 <p>Need to find a new hobby? Perfect, Meetup is a great way to people with the same interests as you!</p>
@@ -96,14 +96,14 @@ class CalendarPage extends Component {
                                     </Link>
                                     {/* <button className="btn btn-primary event-btn">Click Me!</button> */}
 
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-6 half-left pl-0 pr-0">
+                                {/* </div>
+                            </div> */}
+                        {/* </div>  */}
+                        {/* <div className="col-md-6 half-left pl-0 pr-0">
                             <img src="../meetup1.png" alt="video" id="video" className="calendar-img1" />
-                        </div>
+                        </div> */}
 
-                    </div>
+                    {/* // </div> */}
                 </div>
             </div>
 
