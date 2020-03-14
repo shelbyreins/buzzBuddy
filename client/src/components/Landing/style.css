@@ -58,14 +58,16 @@
     @media only screen and (max-width: 100rem) {
       .landing-p{
          margin-left:0px;
-         text-align:center
+         text-align:center;
+        
       }
 
     }
     @media only screen and (max-width: 68rem) {
       .landing-p{
          margin-left:0px;
-         text-align:center
+         text-align:center;
+         font-size: 1.2em !important;
       }
 
       .carousel-caption {
@@ -103,7 +105,8 @@
 
          .landing-p{
             margin-left:0px;
-            text-align:center
+            text-align:center;
+            font-size: 1.6em !important;
          }
 
          #logo{
