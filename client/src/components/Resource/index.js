@@ -8,9 +8,8 @@ const q = "motivation"
 
 var youtubeURL = `https://www.googleapis.com/youtube/v3/search?key=${API}&q=${q}&part=snippet,id&order=date&maxResults=${result}`
 
-class Resources extends Component {
-
-    constructor(props) {
+class Resources extends Component { 
+    constructor(props) {            
         super(props);
 
         this.state = {
@@ -57,7 +56,7 @@ class Resources extends Component {
 
 
                 {this.state.videoresult.map((link, i) => {
-                    var frame = <div key={i} className="youtube"><iframe width="560" height="315" src={link} frameBorder="0" allowFullScreen></iframe></div>
+                    var frame = <div key={i} id="youtube"><iframe width="560" height="315" src={link} frameBorder="0" allowFullScreen></iframe></div>
                     return frame
                     console.log(link)
                 })
