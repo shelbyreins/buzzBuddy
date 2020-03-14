@@ -155,12 +155,13 @@ class Calendar extends React.Component {
       price: localStorage.getItem("price"),
       date: this.state.cursor
     }
-    console.log("userData: " + JSON.stringify(userData));
     drinks(userData).then(res => {
       if (res) {
+
         // this.props.history.push(`/addDr`);
         console.log(res);
         // window.location.reload();
+
       }
     })
   }
