@@ -7,18 +7,9 @@ const DrinkSchema = new Schema({
     type: String,
     required: true
   },
-  allEvents: {
-    type: Object,
-  },
   event: {
     type: String,
     required: true
-  },
-  quantity: {
-    type: Number
-  },
-  price: {
-      type: Number 
   },
   date: {
     type: String

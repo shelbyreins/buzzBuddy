@@ -1,5 +1,5 @@
 import React from "react";
-import { drinks, getAllEvents } from "../UserFunctions";
+import { drinks, getAllEvents, removeEvent } from "../UserFunctions";
 // import Modal from "./components/Modal";
 import "./style.css";
 
@@ -45,16 +45,7 @@ class Form extends React.Component {
             <option className="inputs">Other</option>
           </select>
 
-          <input className="input-main mb-2 "
-            onChange={(e) => this.props.updateQ(e.target.value)}
-            placeholder="quantity"
-            type="text">
-          </input>
-          <input className="input-main mb-3"
-            onChange={(e) => this.props.updateP(e.target.value)}
-            placeholder="price"
-            type="text">
-          </input>
+          <br></br>
 
           <button type="submit" className="btn-main" id="btn-calendar">Add Event</button>
         </div>
@@ -87,8 +78,6 @@ class Calendar extends React.Component {
 
     this.addEvent = this.addEvent.bind(this);
     this.updateEvent = this.updateEvent.bind(this);
-    this.updateQuantity = this.updateQuantity.bind(this);
-    this.updatePrice = this.updatePrice.bind(this);
     this.saveEvents = this.saveEvents.bind(this);
     this.loadEvents = this.loadEvents.bind(this);
   }
@@ -143,7 +132,7 @@ class Calendar extends React.Component {
   }
 
   saveEvents() {
-    localStorage.setItem("events", JSON.stringify(this.state.events));
+    // localStorage.setItem("events", JSON.stringify(this.state.events));
 
     localStorage.setItem("event", this.state.event);
     localStorage.setItem("quantity", this.state.quantity);
@@ -151,8 +140,6 @@ class Calendar extends React.Component {
     let userData = {
       userId: localStorage.getItem("userId"),
       event: localStorage.getItem("event"),
-      quantity: localStorage.getItem("quantity"),
-      price: localStorage.getItem("price"),
       date: this.state.cursor
     }
     drinks(userData).then(res => {
@@ -178,7 +165,9 @@ class Calendar extends React.Component {
           occasions[entry.date] = [entry.event];
         });
         if (occasions) {
+          console.log("occasions: ", occasions);
           this.setState({ events: occasions });
+          localStorage.setItem("events", this.state.events);
         }
       }
     });
@@ -190,8 +179,7 @@ class Calendar extends React.Component {
     return [];
   }
   updateEvent(e) { this.setState({ event: e }); }
-  updateQuantity(e) { this.setState({ quantity: e }); }
-  updatePrice(e) { this.setState({ price: e }); }
+
   addEvent(e) {
     if (e) e.preventDefault();
     let event = this.state.event.trim();
@@ -205,12 +193,33 @@ class Calendar extends React.Component {
   }
   removeEvents(date) {
     let events = this.state.events;
-    delete events[date];
+    // console.log("events: ", Object(events));
+    let event = localStorage.getItem("event");
+    let userId = localStorage.getItem("userId");
+    delete events[this.date];
+
+    const userData = {
+      userId: userId,
+      date: date,
+      event: event
+    };
+
+    console.log("userData: ", userData);
+
+    removeEvent(userData)
+      .then(res => {
+        console.log("res: ", res);
+      })
+      .catch(err => {
+        console.log("err: ", err);
+      })
     this.setState({ events: events });
   }
   removeEvent(date, idx) {
     if (this.state.events[date]) {
       let events = this.state.events;
+      // console.log("events[date]: ", events[date]);
+      localStorage.setItem("event", events[date]);
       events[date].splice(idx, 1);
       if (!events[date].length) {
         this.removeEvents(date);
@@ -313,7 +322,7 @@ class Calendar extends React.Component {
                 {/* New event */}
                 <div className="event-add">
                   {/* <h2>Add new event</h2> */}
-                  <Form value={this.state.event} submit={this.addEvent} update={this.updateEvent} updateQ={this.updateQuantity} updateP={this.updatePrice} />
+                  <Form value={this.state.event} submit={this.addEvent} update={this.updateEvent} />
                 </div>
               </div>    
       </React.Fragment>
