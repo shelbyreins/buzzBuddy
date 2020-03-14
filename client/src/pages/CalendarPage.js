@@ -22,13 +22,13 @@ class CalendarPage extends Component {
 
             .then(data => {
                 let results = data.results
-                console.log(results)
+                // console.log(results)
                 results = results.map(result => {
                     result = {
                         quote: result.quoteText,
                         author: result.quoteAuthor
                     }
-                    console.log(result)
+                    // console.log(result)
                     return result;
                 })
                 this.setState({
@@ -52,7 +52,7 @@ class CalendarPage extends Component {
 
     render() {
         let now = new Date();
-        console.log("this.state.quotes[0]: " + JSON.stringify(this.state.quotes[0]))
+        // console.log("this.state.quotes[0]: " + JSON.stringify(this.state.quotes[0]))
         return (
             <div>
                 <div className="jumbotron" id="quotes-container">
