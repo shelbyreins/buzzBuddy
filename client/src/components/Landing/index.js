@@ -56,7 +56,7 @@ class Landing extends Component {
             <div className="row">
               <div className="col-md-6 landing-border">
                 <h2 className="landing-title">Why Buzz Buddy?</h2>
-                <p className="landing-p"> Buzz Buddy is the perfect buddy for you.  <br /> Built with you in mind. Buzz Buddy has <br/> and support to help you stop drinking. <br/> <strong>For good this time.</strong> </p>
+                <p className="landing-p"> Buzz Buddy is the perfect buddy for you.  <br /> Built with you in mind. Buzz Buddy is a<br/> new innovative way to help you stop drinking. <br/> <strong>For good this time.</strong> </p>
 
               </div>
               
