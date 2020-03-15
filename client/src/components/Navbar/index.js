@@ -52,7 +52,7 @@ class Navbar extends Component {
       <nav className="navbar navbar-expand-lg navbar-dark" id="navbar">
 
         <div to="/" className="navbar-brand">
-          <img src="../logo11.png" alt="logo" id="logo" />
+          <img src="logo11.png" alt="logo" id="logo" />
         </div>
 
         <button

@@ -14,7 +14,7 @@ class Landing extends Component {
           </ol>
           <div className="carousel-inner ">
             <div className="carousel-item active ">
-              <img className="d-block w-100 slides" src="../image4.jpg" alt="First slide" />
+              <img className="d-block w-100 slides" src="image4.jpg" alt="First slide" />
               <div class="carousel-caption  d-md-block ">
               <div className="steps">Step 1:</div>
                 <h1>Create an account</h1>
@@ -22,7 +22,7 @@ class Landing extends Component {
               </div>
             </div>
             <div className="carousel-item ">
-              <img className="d-block w-100 slides" src="../image3.jpeg" alt="Second slide" />
+              <img className="d-block w-100 slides" src="image3.jpeg" alt="Second slide" />
               <div class="carousel-caption  d-md-block">
               <div className="steps">Step 2:</div>
                 <h1>Login in and checkout our resouces!</h1>
@@ -30,7 +30,7 @@ class Landing extends Component {
               </div>
             </div>
             <div className="carousel-item">
-              <img className="d-block w-100 slides" src="../image2.jpeg" alt="Third slide" />
+              <img className="d-block w-100 slides" src="image2.jpeg" alt="Third slide" />
               <div class="carousel-caption  d-md-block">
                 <div className="steps">Step 3:</div>
                 <h1>Track your success!</h1>
