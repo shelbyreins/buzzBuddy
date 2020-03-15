@@ -15,12 +15,12 @@ class Navbar extends Component {
       <div className="navbar-nav " >
         <div className="nav-item">
           <Link to="/login" className="nav-link" >
-            <span class="glyphicon glyphicon-log-in"></span> Login
+            <span className="glyphicon glyphicon-log-in"></span> Login
           </Link>
         </div>
         <div className="nav-item">
           <Link to="/register" className="nav-link">
-            <span class="glyphicon glyphicon-user"></span> Register
+            <span className="glyphicon glyphicon-user"></span> Register
           </Link>
         </div>
       </div>

@@ -7,27 +7,42 @@ import { Link } from 'react-router-dom'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 class CalendarPage extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            refresh: false
+        };
+
+        this.handleAddEvent = this.handleAddEvent.bind(this);
+    }
+
+    handleAddEvent() {
+        this.setState({refresh: true});
+        console.log("handleAddEvent() executed");
+        // this.setState({refresh: false});
+    }
 
     render() {
         let now = new Date();
+        console.log("rerendered");
         // console.log("this.state.quotes[0]: " + JSON.stringify(this.state.quotes[0]))
         return (
             <div>
                 <div>
-                <Quotes />
-
+                    <Quotes />
                 </div>
 
                 <div className="calendar-modal">
-                    <div className="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div className="modal" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div className="modal-dialog modal-dialog-centered" role="document">
                             <div className="modal-content">
-                                
+
                                 <div className="modal-body">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                    <Calendar year={now.getFullYear()} month={now.getMonth() + 1} day={now.getDate()} id="calendar-comp" />
+                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <Calendar year={now.getFullYear()} month={now.getMonth() + 1} day={now.getDate()} id="calendar-comp" handleAddEvent={this.handleAddEvent} />
                                 </div>
                             </div>
                         </div>
@@ -86,7 +101,7 @@ class CalendarPage extends Component {
                     </div>
 
                     {/* <div className="row info-border"> */}
-                        {/* <div className="col-md-6  half-right pl-5 pr-0 ">
+                    {/* <div className="col-md-6  half-right pl-5 pr-0 ">
                             <div className="event-title pl-5">
                                 <h2>Find a local Meetup</h2>
                                 <p>Need to find a new hobby? Perfect, Meetup is a great way to people with the same interests as you!</p>
@@ -96,10 +111,10 @@ class CalendarPage extends Component {
                                     </Link>
                                     {/* <button className="btn btn-primary event-btn">Click Me!</button> */}
 
-                                {/* </div>
+                    {/* </div>
                             </div> */}
-                        {/* </div>  */}
-                        {/* <div className="col-md-6 half-left pl-0 pr-0">
+                    {/* </div>  */}
+                    {/* <div className="col-md-6 half-left pl-0 pr-0">
                             <img src="../meetup1.png" alt="video" id="video" className="calendar-img1" />
                         </div> */}
 

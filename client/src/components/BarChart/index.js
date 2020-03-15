@@ -7,8 +7,14 @@ var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 class BarChart extends Component {
-    componentDidUpdate() {
+    // componentDidUpdate() {
         
+    // }
+    constructor(props) {
+        super(props);
+        this.state = {
+            refresh: false
+        };
     }
 
     render() {
@@ -27,6 +33,8 @@ class BarChart extends Component {
 
         getAllEvents(userId).then(res => {
             if (res) {
+                // console.log("res(getAllEvents): ", res);
+                // this.setState({ refresh: true});
                 res.forEach(entry => {
                     switch (entry.event) {
                         case "Watched Video":
