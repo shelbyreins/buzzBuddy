@@ -146,7 +146,7 @@ class Calendar extends React.Component {
       if (res) {
 
         // this.props.history.push(`/addDr`);
-        console.log(res);
+        
         // window.location.reload();
 
       }
@@ -165,7 +165,6 @@ class Calendar extends React.Component {
           occasions[entry.date] = [entry.event];
         });
         if (occasions) {
-          console.log("occasions: ", occasions);
           this.setState({ events: occasions });
           localStorage.setItem("events", this.state.events);
         }
@@ -193,7 +192,6 @@ class Calendar extends React.Component {
   }
   removeEvents(date) {
     let events = this.state.events;
-    // console.log("events: ", Object(events));
     let event = localStorage.getItem("event");
     let userId = localStorage.getItem("userId");
     delete events[this.date];
@@ -204,11 +202,9 @@ class Calendar extends React.Component {
       event: event
     };
 
-    console.log("userData: ", userData);
 
     removeEvent(userData)
       .then(res => {
-        console.log("res: ", res);
       })
       .catch(err => {
         console.log("err: ", err);
@@ -218,7 +214,6 @@ class Calendar extends React.Component {
   removeEvent(date, idx) {
     if (this.state.events[date]) {
       let events = this.state.events;
-      // console.log("events[date]: ", events[date]);
       localStorage.setItem("event", events[date]);
       events[date].splice(idx, 1);
       if (!events[date].length) {

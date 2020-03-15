@@ -14,21 +14,17 @@ class Quotes extends Component {
 
             .then(data => {
                 let results = data.results
-                // console.log(results)
                 results = results.map(result => {
                     result = {
                         quote: result.quoteText,
                         author: result.quoteAuthor
                     }
-                    // console.log(result)
                     return result;
                 })
                 this.setState({
                     quotes: results
                 });
                 this.counter()
-                // console.log(this.state.quotes)
-                // console.log(results)
 
             });
     }
