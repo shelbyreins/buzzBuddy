@@ -6,16 +6,15 @@
     margin-bottom: 20px !important;
     background-color: rgba(6, 88, 118, 0.66) !important;
     text-align: center;
-
 }
-.video{
+/* .video{
     
     justify-content: center;
-    margin-left: 50px;
+    margin-left: 60px;
    
   flex-direction: column;
   align-items: center;
-}
+} */
 
 #youtube{
     display: inline-block;
@@ -23,45 +22,19 @@
 
 }
 
-
-@media only screen and (max-width: 110rem) {
-    #youtube{
-        display: inline-block; 
-    } 
-    .video{
-        /* margin: 20px; */
-        margin-left:80px;
-      align-items: center;
-    }
-}
-@media only screen and (max-width: 80rem) {
-    #youtube{
-        display: inline-block; 
-    } 
-    .video{
-        /* margin: 20px; */
-        margin-left:35px;
-      align-items: center;
-    }
-}
 @media only screen and (max-width: 68rem) {
-    #youtube{
-        display: inline-block; 
-    } 
+  
     .video{
-        /* margin: 20px; */
-        margin-left:60px;
-      align-items: center;
+        
+        margin-left:70px !important;
+      align-items: center !important;
     }
 }
 @media only screen and (max-width: 32rem) {
-    #youtube{
-        display: inline-block; 
-    } 
+   
     .video{
-        /* margin: 20px; */
-        margin-left:40px;
-      align-items: center;
+        margin-left:auto !important;
+      align-items: center !important;
     }
 }
 

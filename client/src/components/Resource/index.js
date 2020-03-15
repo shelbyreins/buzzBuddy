@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import "./style.css"
 
 const API = "AIzaSyB9VyhRDYdmbZAXppHK91QeLHrz7NGc9d0";
-const result = 18
+const result = 20
 const q = "Videos to help stop drinking alcohol"
 const language = "en"
 const regionCode = "US"
@@ -42,22 +42,25 @@ class Resources extends Component {
                 <div className="jumbotron">
                 <div class="container">
                     <div class="row">
-                        <div className="col-md-6">
+                        <div className="col-md-4">
                         <button type="button" className="btn btn-lg btn-primary resourceBtn" onClick={this.clicked}>YOUTUBE</button>
 
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-4">
                         <button type="button" className="btn btn-lg btn-primary resourceBtn">AA MEETING</button>
+                        </div>
+                        <div className="col-md-4">
+                        <button type="button" className="btn btn-lg btn-primary resourceBtn">COMING SOON...</button>
                         </div>
                     </div>
                 </div>
 
                 </div>
                 
-                <div className="video">
+                <div className="video container">
                 {this.state.videoresult.map((link, i) => {
                 
-                    var frame = <div key={i} className="text-center"id="youtube"><iframe width="270" height="200" src={link} frameBorder="0" allowFullScreen></iframe></div>
+                    var frame = <div key={i} className="text-center"id="youtube"><iframe width="250" height="200" src={link} frameBorder="0" allowFullScreen></iframe></div>
                     
                     return frame
                     

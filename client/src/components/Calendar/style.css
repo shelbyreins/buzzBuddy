@@ -41,14 +41,14 @@
   
   .calendar-img{
     width:100%;
-    height:200px;
+    height:257px;
     opacity: 0.5;
     max-width: 100%;
   }
   
   .calendar-img1{
     width:100%;
-    height:200px;
+    height:250px;
     max-width: 100%;
     opacity: 0.4;
   
@@ -87,7 +87,9 @@
     width: 25%;
     font-size: 1.2em !important;
     letter-spacing: 1px;
-    border-radius:0px !important;
+    margin-top: 20px;
+    margin-right:40px;
+    border-radius:20px !important;
     background-color: rgba(6, 88, 118, 0.66) !important;
     
   }
