@@ -10,7 +10,6 @@ class CalendarPage extends Component {
 
     render() {
         let now = new Date();
-        // console.log("this.state.quotes[0]: " + JSON.stringify(this.state.quotes[0]))
         return (
             <div>
                 <div>
