@@ -105,13 +105,13 @@ class CalendarPage extends Component {
                             </div>
                         </div>
                         <div className="col-sm-6 half-left pl-0 pr-0" >
-                            <img src="../meeting1.jpeg" alt="meeting" id="meeting" className="calendar-img" />
+                            <img src="meeting1.jpeg" alt="meeting" id="meeting" className="calendar-img" />
                         </div>
                     </div>
 
                     <div className="row info-border">
                         <div className="col-md-6 half-right pl-0 pr-0">
-                            <img src="../video1.jpeg" alt="meetup1" id="meetup1" className="calendar-img" />
+                            <img src="video1.jpeg" alt="meetup1" id="meetup1" className="calendar-img" />
                         </div>
                         <div className="col-md-6 half-left pl-5 pr-0">
                             <div className="event-title pl-5">
@@ -143,7 +143,7 @@ class CalendarPage extends Component {
                             </div> */}
                         {/* </div>  */}
                         {/* <div className="col-md-6 half-left pl-0 pr-0">
-                            <img src="../meetup1.png" alt="video" id="video" className="calendar-img1" />
+                            <img src="/meetup1.png" alt="video" id="video" className="calendar-img1" />
                         </div> */}
 
                     {/* // </div> */}
