@@ -7,21 +7,9 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 class BarChart extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            refresh: false
-        };
-    }
-
-    handleAddEvent() {
-        this.setState({ refresh: true});
-    }
-
     render() {
         let attendAA = 0;
         let watchedVideo = 0;
-        let meetUp = 0;
         let alc = 0;
         let noAlc = 0;
         let other = 0;
@@ -41,9 +29,6 @@ class BarChart extends Component {
                         case "AA Meeting":
                             attendAA++;
                             break;
-                        case "MeetUp":
-                            meetUp++;
-                            break;
                         case "Alcohol Drink":
                             alc++;
                             break;
@@ -55,7 +40,6 @@ class BarChart extends Component {
                             break;
                     }
                 });
-                this.handleAddEvent();
                 window.options = {
                     animationEnabled: true,
                     theme: "light2",
