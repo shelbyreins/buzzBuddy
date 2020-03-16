@@ -5,21 +5,35 @@ import Quotes from "./../components/Quotes";
 import { Link } from 'react-router-dom'
 
 class CalendarPage extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            refresh: false
+        };
+
+        this.handleAddEvent = this.handleAddEvent.bind(this);
+    }
+
+    handleAddEvent() {
+        this.setState({refresh: true});
+        console.log("handleAddEvent() executed");
+        // this.setState({refresh: false});
+    }
 
     render() {
         let now = new Date();
         return (
             <div>
                 <div>
-                <Quotes />
-
+                    <Quotes />
                 </div>
 
                 <div className="calendar-modal">
-                    <div className="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div className="modal" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div className="modal-dialog modal-dialog-centered" role="document">
                             <div className="modal-content">
-                                
+
                                 <div className="modal-body">
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>

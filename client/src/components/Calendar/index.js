@@ -170,6 +170,7 @@ class Calendar extends React.Component {
 
   addEvent(e) {
     if (e) e.preventDefault();
+    console.log("e: ", e);
     let event = this.state.event.trim();
     if (!event) return;
     let events = this.state.events;
@@ -177,7 +178,7 @@ class Calendar extends React.Component {
     if (!events[date]) events[date] = [];
     events[date].push(event);
     this.setState({ event: "", events: events });
-    this.saveEvents();
+    this.saveEvents()
   }
   removeEvents(date) {
     let events = this.state.events;
