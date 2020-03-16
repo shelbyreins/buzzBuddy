@@ -37,6 +37,7 @@ class Form extends React.Component {
           >
             <option className="inputs">Select Event</option>
             <option className="inputs">Watched Video</option>
+            <option className="inputs">AA Meeting</option>
             <option className="inputs">Alcohol Drink</option>
             <option className="inputs">No Alcohol</option>
             <option className="inputs">Other</option>
