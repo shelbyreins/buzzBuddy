@@ -130,8 +130,6 @@ class Calendar extends React.Component {
   saveEvents() {
 
     localStorage.setItem("event", this.state.event);
-    localStorage.setItem("quantity", this.state.quantity);
-    localStorage.setItem("price", this.state.price);
     let userData = {
       userId: localStorage.getItem("userId"),
       event: localStorage.getItem("event"),
