@@ -23,7 +23,7 @@ class CalendarPage extends Component {
                             <div className="modal-content">
                                 
                                 <div className="modal-body">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                                     <Calendar year={now.getFullYear()} month={now.getMonth() + 1} day={now.getDate()} id="calendar-comp" />
@@ -51,12 +51,11 @@ class CalendarPage extends Component {
                         <div className="col-md-6  half-right pl-5 pr-0">
                             <div className="event-title pl-5">
                                 <h2>Attend an AA Meeting</h2>
-                                <p> Don't know where the closet meeting to you is? </p>
+                                <p> Don't know where the closet meeting to you is? Here is site to help with that. </p>
                                 <div className="event-btn-container">
                                     <Link to="/resource" className="btn btn-primary event-btn">
                                         Click Me!
                                     </Link>
-                                    {/* <button className="btn btn-primary event-btn" >Click Me!</button> */}
                                 </div>
                             </div>
                         </div>
@@ -77,32 +76,30 @@ class CalendarPage extends Component {
                                     <Link to="/resource" className="btn btn-primary event-btn">
                                         Click Me!
                                     </Link>
-                                    {/* <button className="btn btn-primary event-btn" >Click Me!</button> */}
 
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    {/* <div className="row info-border"> */}
-                        {/* <div className="col-md-6  half-right pl-5 pr-0 ">
-                            <div className="event-title pl-5">
+                    <div className="row info-border">
+                        <div className="col-md-6  half-right pl-5 pr-0 ">
+                            <div className="event-title text-center pl-5">
                                 <h2>Find a local Meetup</h2>
-                                <p>Need to find a new hobby? Perfect, Meetup is a great way to people with the same interests as you!</p>
+                                <h2>COMING SOON</h2>
                                 <div className="event-btn-container">
-                                    <Link to="/resource" className="btn btn-primary event-btn">
+                                    {/* <div to="*" className="btn btn-primary event-btn">
                                         Click Me!
-                                    </Link>
-                                    {/* <button className="btn btn-primary event-btn">Click Me!</button> */}
+                                    </div> */}
 
-                                {/* </div>
-                            </div> */}
-                        {/* </div>  */}
-                        {/* <div className="col-md-6 half-left pl-0 pr-0">
+                                </div>
+                            </div>
+                        </div> 
+                        <div className="col-md-6 half-left pl-0 pr-0">
                             <img src="/meetup1.png" alt="video" id="video" className="calendar-img1" />
-                        </div> */}
+                        </div>
 
-                    {/* // </div> */}
+                    // </div>
                 </div>
             </div>
 
