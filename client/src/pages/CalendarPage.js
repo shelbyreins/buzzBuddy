@@ -48,7 +48,7 @@ class CalendarPage extends Component {
                 <div>
                 <div className="jumbotron" id="quotes-container">
                 <div className="container">
-                    <h4 id="quotes">{this.state.quotes[this.state.counter] ? this.state.quotes[this.state.counter].quote : ''}</h4>
+                    <h4 id="quotes">"{this.state.quotes[this.state.counter] ? this.state.quotes[this.state.counter].quote : ''}"</h4>
                 </div>
             </div>
                 </div>

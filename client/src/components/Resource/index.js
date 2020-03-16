@@ -36,7 +36,6 @@ class Resources extends Component {
     }
 
     render() {
-        console.log(youtubeURL)
         return (
             <div>
                 <div className="jumbotron">
