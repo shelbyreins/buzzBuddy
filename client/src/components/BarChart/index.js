@@ -48,7 +48,7 @@ class BarChart extends Component {
                     },
                     axisX: {
                         title: "Events",
-                        reversed: true,
+                        reversed: true
                     },
                     axisY: {
                         interval: 2,
@@ -62,7 +62,7 @@ class BarChart extends Component {
                             { y: watchedVideo, label: "Watched Video" },
                             { y: alc, label: "Alcohol" },
                             { y: noAlc, label: "No Alcohol" },
-                            { y: other, label: "Other" },
+                            { y: other, label: "Other" }
                         ]
                     }]
                 }
