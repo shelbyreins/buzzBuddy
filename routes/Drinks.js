@@ -6,7 +6,6 @@ const Drink = require("./../models/Drink");
 drinks.use(cors());
 
 drinks.post("/addDrink", function (req, res) {
-    console.log("req.body: ", req.body);
     const drinkData = {
         userId: req.body.userId,
         event: req.body.event,
