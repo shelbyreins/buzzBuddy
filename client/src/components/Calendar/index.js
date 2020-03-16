@@ -1,6 +1,5 @@
 import React from "react";
 import { drinks, getAllEvents, removeEvent } from "../UserFunctions";
-// import Modal from "./components/Modal";
 import "./style.css";
 
 
@@ -39,7 +38,6 @@ class Form extends React.Component {
             <option className="inputs">Select Event</option>
             <option className="inputs">AA Meeting</option>
             <option className="inputs">Watched Video</option>
-            <option className="inputs">MeetUp</option>
             <option className="inputs">Alcohol Drink</option>
             <option className="inputs">No Alcohol</option>
             <option className="inputs">Other</option>
@@ -67,8 +65,6 @@ class Calendar extends React.Component {
       event: "",
       events: {},
       quantity: ""
-      // drink: "",
-      // price: ""
     };
     this.setDay = this.setDay.bind(this);
     this.setDate = this.setDate.bind(this);
@@ -132,7 +128,6 @@ class Calendar extends React.Component {
   }
 
   saveEvents() {
-    // localStorage.setItem("events", JSON.stringify(this.state.events));
 
     localStorage.setItem("event", this.state.event);
     localStorage.setItem("quantity", this.state.quantity);
@@ -145,15 +140,11 @@ class Calendar extends React.Component {
     drinks(userData).then(res => {
       if (res) {
 
-        // this.props.history.push(`/addDr`);
-        console.log(res);
-        // window.location.reload();
-        this.props.handleAddEvent();
+        
       }
     })
   }
   loadEvents() {
-    // let events = localStorage.getItem("events");
     let occasions = {};
     let userId = {
       userId: localStorage.getItem("userId"),
@@ -165,7 +156,6 @@ class Calendar extends React.Component {
           occasions[entry.date] = [entry.event];
         });
         if (occasions) {
-          console.log("occasions: ", occasions);
           this.setState({ events: occasions });
           localStorage.setItem("events", this.state.events);
         }
@@ -194,7 +184,6 @@ class Calendar extends React.Component {
   }
   removeEvents(date) {
     let events = this.state.events;
-    // console.log("events: ", Object(events));
     let event = localStorage.getItem("event");
     let userId = localStorage.getItem("userId");
     delete events[this.date];
@@ -205,11 +194,9 @@ class Calendar extends React.Component {
       event: event
     };
 
-    console.log("userData: ", userData);
 
     removeEvent(userData)
       .then(res => {
-        console.log("res: ", res);
       })
       .catch(err => {
         console.log("err: ", err);
@@ -219,7 +206,6 @@ class Calendar extends React.Component {
   removeEvent(date, idx) {
     if (this.state.events[date]) {
       let events = this.state.events;
-      // console.log("events[date]: ", events[date]);
       localStorage.setItem("event", events[date]);
       events[date].splice(idx, 1);
       if (!events[date].length) {
@@ -322,7 +308,6 @@ class Calendar extends React.Component {
 
                 {/* New event */}
                 <div className="event-add">
-                  {/* <h2>Add new event</h2> */}
                   <Form value={this.state.event} submit={this.addEvent} update={this.updateEvent} />
                 </div>
               </div>    

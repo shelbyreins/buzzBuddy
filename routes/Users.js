@@ -51,7 +51,6 @@ users.post('/login', (req, res) => {
     email: req.body.email
   })
     .then(user => {
-      console.log("user: " + user);
       if (user) {
         if (bcrypt.compareSync(req.body.password, user.password)) {
           // Passwords match
@@ -73,7 +72,6 @@ users.post('/login', (req, res) => {
           res.json({ error: 'Password Incorrect' })
         }
       } else {
-        // alert("User does not exist");
         res.json({ error: 'User does not exist' })
       }
     })
