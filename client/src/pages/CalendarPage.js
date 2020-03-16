@@ -135,7 +135,7 @@ class CalendarPage extends Component {
                             <img src="/meetup1.png" alt="video" id="video" className="calendar-img1" />
                         </div>
 
-                    // </div>
+                     </div>
                 </div>
             </div>
 
