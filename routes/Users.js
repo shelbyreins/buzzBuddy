@@ -72,7 +72,6 @@ users.post('/login', (req, res) => {
           res.json({ error: 'Password Incorrect' })
         }
       } else {
-        // alert("User does not exist");
         res.json({ error: 'User does not exist' })
       }
     })

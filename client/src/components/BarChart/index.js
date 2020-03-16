@@ -1,4 +1,3 @@
-/* App.js */
 import React, { Component } from 'react';
 import { getAllEvents } from "../UserFunctions";
 import CanvasJSReact from './canvasjs/canvasjs.react';
@@ -69,7 +68,6 @@ class BarChart extends Component {
                         dataPoints: [
                             { y: attendAA, label: "Attend AA" },
                             { y: watchedVideo, label: "Watched Video" },
-                            { y: meetUp, label: "MeetUp" },
                             { y: alc, label: "Alcohol" },
                             { y: noAlc, label: "No Alcohol" },
                             { y: other, label: "Other" },
@@ -82,9 +80,8 @@ class BarChart extends Component {
         return (
             <div>
                 <CanvasJSChart options={window.options}
-                /* onRef={ref => this.chart = ref} */
+                
                 />
-                {/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
             </div>
         );
 
