@@ -3,8 +3,6 @@ import Calendar from "./../components/Calendar";
 import BarChart from "./../components/BarChart";
 import Quotes from "./../components/Quotes";
 import { Link } from 'react-router-dom'
-// import YouTube from "./../components/YouTube";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 class CalendarPage extends Component {
 

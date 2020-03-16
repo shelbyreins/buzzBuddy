@@ -1,6 +1,5 @@
 import React from "react";
 import { drinks, getAllEvents, removeEvent } from "../UserFunctions";
-// import Modal from "./components/Modal";
 import "./style.css";
 
 
@@ -39,7 +38,6 @@ class Form extends React.Component {
             <option className="inputs">Select Event</option>
             <option className="inputs">AA Meeting</option>
             <option className="inputs">Watched Video</option>
-            <option className="inputs">MeetUp</option>
             <option className="inputs">Alcohol Drink</option>
             <option className="inputs">No Alcohol</option>
             <option className="inputs">Other</option>
@@ -67,8 +65,6 @@ class Calendar extends React.Component {
       event: "",
       events: {},
       quantity: ""
-      // drink: "",
-      // price: ""
     };
     this.setDay = this.setDay.bind(this);
     this.setDate = this.setDate.bind(this);
@@ -132,7 +128,6 @@ class Calendar extends React.Component {
   }
 
   saveEvents() {
-    // localStorage.setItem("events", JSON.stringify(this.state.events));
 
     localStorage.setItem("event", this.state.event);
     localStorage.setItem("quantity", this.state.quantity);
@@ -145,15 +140,11 @@ class Calendar extends React.Component {
     drinks(userData).then(res => {
       if (res) {
 
-        // this.props.history.push(`/addDr`);
         
-        // window.location.reload();
-
       }
     })
   }
   loadEvents() {
-    // let events = localStorage.getItem("events");
     let occasions = {};
     let userId = {
       userId: localStorage.getItem("userId"),
@@ -316,7 +307,6 @@ class Calendar extends React.Component {
 
                 {/* New event */}
                 <div className="event-add">
-                  {/* <h2>Add new event</h2> */}
                   <Form value={this.state.event} submit={this.addEvent} update={this.updateEvent} />
                 </div>
               </div>    

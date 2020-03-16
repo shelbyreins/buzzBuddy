@@ -5,7 +5,6 @@ class Landing extends Component {
   render() {
     return (
       <div>
-        {/* <div className="jumbotron mt-3"> */}
         <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
           <ol className="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
@@ -47,7 +46,6 @@ class Landing extends Component {
             <span className="sr-only">Next</span>
           </a>
         </div>
-        {/* </div> */}
 
         <h2 className="text-center" id="details">Track your Journey | Hold yourself Accountable | Save Money</h2>
 
