@@ -33,7 +33,6 @@ class BarChart extends Component {
 
         getAllEvents(userId).then(res => {
             if (res) {
-                this.handleAddEvent();
                 res.forEach(entry => {
                     switch (entry.event) {
                         case "Watched Video":
@@ -56,6 +55,7 @@ class BarChart extends Component {
                             break;
                     }
                 });
+                this.handleAddEvent();
                 window.options = {
                     animationEnabled: true,
                     theme: "light2",
@@ -85,7 +85,6 @@ class BarChart extends Component {
 
             }
         });
-        // this.handleAddEvent();
         return (
             <div>
                 <CanvasJSChart options={window.options}
