@@ -52,6 +52,7 @@ export const drinks = drink => {
       date: drink.date
     })
     .then(response => {
+      console.log(response)
       return response.data
     })
     .catch(err => {

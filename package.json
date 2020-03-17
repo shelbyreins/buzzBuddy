@@ -1,7 +1,7 @@
 {
   "name": "buzzbuddy",
   "version": "1.0.0",
-  "description": "Mern Demo",
+  "description": "Buzz Buddy",
   "engines": {
     "npm": "6.10.3",
     "node": "12.9.1"
