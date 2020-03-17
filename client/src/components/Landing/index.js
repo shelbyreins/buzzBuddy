@@ -24,7 +24,7 @@ class Landing extends Component {
               <img className="d-block w-100 slides" src="image3.jpeg" alt="Second slide" />
               <div class="carousel-caption  d-md-block">
               <div className="steps">Step 2:</div>
-                <h1>Login in and checkout our resouces!</h1>
+                <h1>Login and checkout our resouces!</h1>
                 <h4>Buzz Buddy is here with many resources for you to explore</h4>
               </div>
             </div>
@@ -54,7 +54,7 @@ class Landing extends Component {
             <div className="row">
               <div className="col-md-6 landing-border">
                 <h2 className="landing-title">Why Buzz Buddy?</h2>
-                <p className="landing-p"> Buzz Buddy is the perfect buddy for you.  <br /> Built with you in mind. Buzz Buddy is a<br/> new innovative way to help you stop drinking. <br/> <strong>For good this time.</strong> </p>
+                <p className="landing-p"> Buzz Buddy is the perfect buddy for you.  <br /> Built with you in mind. A new <br/> innovative way to help you stop drinking. <br/> <strong>For good this time.</strong> </p>
 
               </div>
               
