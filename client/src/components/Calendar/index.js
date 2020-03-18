@@ -43,7 +43,7 @@ class Form extends React.Component {
             <option className="inputs">Other</option>
           </select>
 
-          <br></br>
+          <br/>
 
           <button type="submit" className="btn-main" id="btn-calendar">Add Event</button>
         </div>

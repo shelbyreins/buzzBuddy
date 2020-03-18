@@ -42,11 +42,11 @@ class Resources extends Component {
                 <div class="container">
                     <div class="row">
                         <div className="col-md-4">
-                        <button type="button" className="btn btn-lg btn-primary resourceBtn" onClick={this.clicked}>YOUTUBE</button>
+                        <button type="button" className="btn btn-lg btn-primary resourceBtn" onClick={this.clicked}>Videos</button>
 
                         </div>
                         <div className="col-md-4">
-                        <button type="button" className="btn btn-lg btn-primary resourceBtn">AA MEETING</button>
+                        <a href="http://www.findaa.org/" target="_blank" type="button" className="btn btn-lg btn-primary resourceBtn" id="aaBtn">AA MEETING</a>
                         </div>
                         <div className="col-md-4">
                         <button type="button" className="btn btn-lg btn-primary resourceBtn">COMING SOON...</button>
