@@ -137,8 +137,7 @@ class Calendar extends React.Component {
     }
     drinks(userData).then(res => {
       if (res) {
-
-        
+        console.log(res);
       }
     })
   }
