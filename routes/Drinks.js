@@ -39,6 +39,6 @@ drinks.get("/removeEvent/:userId/:date/:event", function (req, res) {
         .catch(function (err) {
             res.json(err);
     });
-});
+})
 
 module.exports = drinks;
