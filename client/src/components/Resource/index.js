@@ -46,7 +46,7 @@ class Resources extends Component {
 
                         </div>
                         <div className="col-md-4">
-                        <a href="http://www.findaa.org/" target="_blank" type="button" className="btn btn-lg btn-primary resourceBtn" id="aaBtn">AA MEETING</a>
+                        <a href="http://www.findaa.org/" target="_blank" type="button" className="btn btn-lg btn-primary" id="aaBtn">AA MEETING</a>
                         </div>
                         <div className="col-md-4">
                         <button type="button" className="btn btn-lg btn-primary resourceBtn">COMING SOON...</button>
