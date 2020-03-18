@@ -42,7 +42,7 @@ class Resources extends Component {
                 <div class="container">
                     <div class="row">
                         <div className="col-md-4">
-                        <button type="button" className="btn btn-lg btn-primary resourceBtn" onClick={this.clicked}>Videos</button>
+                        <button type="button" className="btn btn-lg btn-primary resourceBtn" onClick={this.clicked}>VIDEOS</button>
 
                         </div>
                         <div className="col-md-4">
