@@ -24,7 +24,6 @@ drinks.post("/addDrink", function (req, res) {
 drinks.post("/getAllEvents/:userId", function (req, res) {
     Drink.find({ userId: req.params.userId })
         .then(function (events) {
-            console.log("events (getAllEvents): ", events);
             res.json(events);
         })
         .catch(function (err) {
