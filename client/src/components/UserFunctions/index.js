@@ -65,7 +65,7 @@ export const getAllEvents = event => {
     .get("/getAllEvents/" + event.userId)
     .then(response => {
       console.log("response (getAllEvents): ", response);
-      return response.data;
+      return response;
     })
     .catch(err => {
       console.log(err);
