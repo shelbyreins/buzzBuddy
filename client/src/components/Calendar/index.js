@@ -170,7 +170,6 @@ class Calendar extends React.Component {
 
   addEvent(e) {
     if (e) e.preventDefault();
-    console.log("e: ", e);
     let event = this.state.event.trim();
     if (!event) return;
     let events = this.state.events;

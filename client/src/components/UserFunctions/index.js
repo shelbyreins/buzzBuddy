@@ -52,7 +52,6 @@ export const drinks = drink => {
       date: drink.date
     })
     .then(response => {
-      console.log(response)
       return response.data
     })
     .catch(err => {
@@ -62,7 +61,7 @@ export const drinks = drink => {
 
 export const getAllEvents = event => {
   return axios
-    .get("/getAllEvents/" + event.userId)
+    .post("/getAllEvents/" + event.userId)
     .then(response => {
       console.log("response (getAllEvents): ", response);
       return response;
@@ -74,7 +73,7 @@ export const getAllEvents = event => {
 
 export const removeEvent = event => {
   return axios
-    .get("/removeEvent/" + event.userId + "/" + event.date + "/" + event.event)
+    .post("/removeEvent/" + event.userId + "/" + event.date + "/" + event.event)
     .then(response => {
       return response.data;
     })
