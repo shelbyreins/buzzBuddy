@@ -27,12 +27,12 @@ Buzz Buddy is an interactive event tracking app with resources that help you sto
 
 ### ChartJS
 
-WRITE A LITTLE 
+React component from CanvasJS. Makes a POST request to the database to retrieve all events for a specific user. Tracks the number of days for each event.
 
 <img src="client/public/chart.gif" width="600px" height="300px"> 
 
 ### React Calendar
-WRITE A LITTLE
+React Component used to add events. Makes POST requests to add and remove events to and from the database. 
 
 <img src="client/public/calendar.gif" width="300px" height="350px"> 
 

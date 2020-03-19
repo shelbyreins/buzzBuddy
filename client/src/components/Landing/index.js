@@ -14,7 +14,7 @@ class Landing extends Component {
           <div className="carousel-inner ">
             <div className="carousel-item active ">
               <img className="d-block w-100 slides" src="image4.jpg" alt="First slide" />
-              <div class="carousel-caption  d-md-block ">
+              <div className="carousel-caption  d-md-block ">
               <div className="steps">Step 1:</div>
                 <h1>Create an account</h1>
                 <h4>Click on the register button on the top left and fill out the form</h4>
@@ -22,7 +22,7 @@ class Landing extends Component {
             </div>
             <div className="carousel-item ">
               <img className="d-block w-100 slides" src="image3.jpeg" alt="Second slide" />
-              <div class="carousel-caption  d-md-block">
+              <div className="carousel-caption  d-md-block">
               <div className="steps">Step 2:</div>
                 <h1>Login and checkout our resouces!</h1>
                 <h4>Buzz Buddy is here with many resources for you to explore</h4>
@@ -30,7 +30,7 @@ class Landing extends Component {
             </div>
             <div className="carousel-item">
               <img className="d-block w-100 slides" src="image2.jpeg" alt="Third slide" />
-              <div class="carousel-caption  d-md-block">
+              <div className="carousel-caption  d-md-block">
                 <div className="steps">Step 3:</div>
                 <h1>Track your success!</h1>
                 <h4>Click on Add an Event and select your event for the day</h4>

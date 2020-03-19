@@ -63,7 +63,7 @@ export const getAllEvents = event => {
   return axios
     .post("/getAllEvents/" + event.userId)
     .then(response => {
-      return response.data;
+      return response;
     })
     .catch(err => {
       console.log(err);
